@@ -18,7 +18,7 @@
             <li class="card">
             <?php
                 require 'dbConfig.php';
-                $query = $db->query("SELECT * FROM users WHERE status = 1 AND id = 4");
+                $query = $db->query("SELECT * FROM food WHERE id = 4");
                 if($query->num_rows>0){
 
                     while($row=$query->fetch_assoc())
@@ -39,7 +39,7 @@
             <li class="card">
                 <?php
                     require 'dbConfig.php';
-                    $query = $db->query("SELECT * FROM users WHERE status = 1 AND id = 1");
+                    $query = $db->query("SELECT * FROM food WHERE id = 1");
                     if($query->num_rows>0){
 
                         while($row=$query->fetch_assoc())
@@ -60,7 +60,7 @@
             <li class="card">
                 <?php
                     require 'dbConfig.php';
-                    $query = $db->query("SELECT * FROM users WHERE status = 1 AND id = 2");
+                    $query = $db->query("SELECT * FROM food WHERE id = 2");
                     if($query->num_rows>0){
 
                         while($row=$query->fetch_assoc())
@@ -81,7 +81,7 @@
             <li class="card">
                 <?php
                     require 'dbConfig.php';
-                    $query = $db->query("SELECT * FROM users WHERE status = 1 AND id = 3");
+                    $query = $db->query("SELECT * FROM food WHERE id = 3");
                     if($query->num_rows>0){
 
                         while($row=$query->fetch_assoc())
