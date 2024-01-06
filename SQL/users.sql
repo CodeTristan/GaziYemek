@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2024 at 01:26 AM
+-- Generation Time: Jan 06, 2024 at 06:32 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -54,18 +54,19 @@ CREATE TABLE `food` (
   `Created` datetime NOT NULL DEFAULT current_timestamp(),
   `Modified` datetime NOT NULL DEFAULT current_timestamp(),
   `Calorie` int(11) NOT NULL,
-  `IsVegetarian` tinyint(1) NOT NULL DEFAULT 0
+  `IsVegetarian` tinyint(1) NOT NULL DEFAULT 0,
+  `Food_Type` enum('Çorba','Ana Yemek','Pilav-Ara Sıcak','Tatlı-Meyve-Salata') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `food`
 --
 
-INSERT INTO `food` (`ID`, `File_name`, `Name`, `Created`, `Modified`, `Calorie`, `IsVegetarian`) VALUES
-(1, 'Mercimek.png', 'Mercimek Çorbası', '2023-01-12 16:19:36', '2023-01-12 16:19:36', 250, 1),
-(2, 'köfte.jpg', 'İzmir Köfte', '2023-01-12 16:19:36', '2023-01-12 16:19:36', 120, 0),
-(3, 'pilav.png', 'Pirinç Pilavı', '2023-01-12 16:19:36', '2023-01-12 16:19:36', 180, 1),
-(4, 'portakal.jpg', 'Portakal', '2023-01-12 16:19:36', '2023-01-12 16:19:36', 50, 1);
+INSERT INTO `food` (`ID`, `File_name`, `Name`, `Created`, `Modified`, `Calorie`, `IsVegetarian`, `Food_Type`) VALUES
+(1, 'Mercimek.png', 'Mercimek Çorbası', '2023-01-12 16:19:36', '2023-01-12 16:19:36', 250, 1, 'Çorba'),
+(2, 'köfte.jpg', 'İzmir Köfte', '2023-01-12 16:19:36', '2023-01-12 16:19:36', 120, 0, 'Ana Yemek'),
+(3, 'Pirinç Pilavı.png', 'Pirinç Pilavı', '2023-01-12 16:19:36', '2023-01-12 16:19:36', 180, 1, 'Pilav-Ara Sıcak'),
+(4, 'portakal.jpg', 'Portakal', '2023-01-12 16:19:36', '2023-01-12 16:19:36', 50, 1, 'Tatlı-Meyve-Salata');
 
 -- --------------------------------------------------------
 
@@ -75,8 +76,8 @@ INSERT INTO `food` (`ID`, `File_name`, `Name`, `Created`, `Modified`, `Calorie`,
 
 CREATE TABLE `food_has_menu` (
   `ID` int(11) NOT NULL,
-  `Food_ID` int(11) DEFAULT NULL,
-  `Menu_ID` int(11) DEFAULT NULL
+  `Food_ID` int(11) NOT NULL,
+  `Menu_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -110,7 +111,7 @@ CREATE TABLE `menu` (
 
 INSERT INTO `menu` (`ID`, `Date`) VALUES
 (1, '2024-01-04'),
-(2, '2024-01-05');
+(2, '2024-01-06');
 
 -- --------------------------------------------------------
 
@@ -286,7 +287,7 @@ ALTER TABLE `comment`
 -- Constraints for table `food_has_menu`
 --
 ALTER TABLE `food_has_menu`
-  ADD CONSTRAINT `food_has_menu_ibfk_1` FOREIGN KEY (`Food_ID`) REFERENCES `food` (`id`),
+  ADD CONSTRAINT `food_has_menu_ibfk_1` FOREIGN KEY (`Food_ID`) REFERENCES `food` (`ID`),
   ADD CONSTRAINT `food_has_menu_ibfk_2` FOREIGN KEY (`Menu_ID`) REFERENCES `menu` (`id`);
 
 --
