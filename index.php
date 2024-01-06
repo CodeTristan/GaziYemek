@@ -52,7 +52,7 @@
     </div>
     
     <?php
-    require "mainDBConnection.php";
+        //require "mainDBConnection.php";
     ?>
   </body>
 </html>
