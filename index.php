@@ -16,27 +16,6 @@
         <i id="left" class="fa-solid fa-angle-left"></i>
         <ul class="carousel">
             <li class="card">
-            <?php
-                require 'dbConfig.php';
-                $query = $db->query("SELECT * FROM food WHERE id = 4");
-                if($query->num_rows>0){
-
-                    while($row=$query->fetch_assoc())
-                    {
-                        $imageURL='images/'.$row["file_name"];
-                        $name=$row["title"];
-                        $calori=$row["kalori"];
-                        ?>
-                        <div class="img"><img src="<?php echo $imageURL?>" alt="img" draggable="false"></div>
-                        <h2><?php echo $name ?></h2>
-                        <h4>Kalori:<?php echo $calori ?></h4>
-                        <?php
-                    }
-                
-                }
-                ?>
-            </li>
-            <li class="card">
                 <?php
                     require 'dbConfig.php';
                     $query = $db->query("SELECT * FROM food WHERE id = 1");
@@ -44,9 +23,9 @@
 
                         while($row=$query->fetch_assoc())
                         {
-                            $imageURL='images/'.$row["file_name"];
-                            $name=$row["title"];
-                            $calori=$row["kalori"];
+                            $imageURL='images/Çorbalar/'.$row["File_name"];
+                            $name=$row["Name"];
+                            $calori=$row["Calorie"];
                             ?>
                             <div class="img"><img src="<?php echo $imageURL?>" alt="img" draggable="false"></div>
                             <h2><?php echo $name ?></h2>
@@ -65,9 +44,9 @@
 
                         while($row=$query->fetch_assoc())
                         {
-                            $imageURL='images/'.$row["file_name"];
-                            $name=$row["title"];
-                            $calori=$row["kalori"];
+                            $imageURL='images/Ana Yemek/'.$row["File_name"];
+                            $name=$row["Name"];
+                            $calori=$row["Calorie"];
                             ?>
                             <div class="img"><img src="<?php echo $imageURL?>" alt="img" draggable="false"></div>
                             <h2><?php echo $name ?></h2>
@@ -86,9 +65,9 @@
 
                         while($row=$query->fetch_assoc())
                         {
-                            $imageURL='images/'.$row["file_name"];
-                            $name=$row["title"];
-                            $calori=$row["kalori"];
+                            $imageURL='images/Pilav-Ara Sıcak/'.$row["File_name"];
+                            $name=$row["Name"];
+                            $calori=$row["Calorie"];
                             ?>
                             <div class="img"><img src="<?php echo $imageURL?>" alt="img" draggable="false"></div>
                             <h2><?php echo $name ?></h2>
@@ -97,6 +76,27 @@
                         }
                     
                     }
+                ?>
+            </li>
+            <li class="card">
+            <?php
+                require 'dbConfig.php';
+                $query = $db->query("SELECT * FROM food WHERE id = 4");
+                if($query->num_rows>0){
+
+                    while($row=$query->fetch_assoc())
+                    {
+                        $imageURL='images/Tatlı-Son/'.$row["File_name"];
+                        $name=$row["Name"];
+                        $calori=$row["Calorie"];
+                        ?>
+                        <div class="img"><img src="<?php echo $imageURL?>" alt="img" draggable="false"></div>
+                        <h2><?php echo $name ?></h2>
+                        <h4>Kalori:<?php echo $calori ?></h4>
+                        <?php
+                    }
+                
+                }
                 ?>
             </li>
         </ul>
