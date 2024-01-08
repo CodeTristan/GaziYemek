@@ -5,28 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css">
-  <style>
-    .form-group {
-      margin-bottom: 10px;
-    }
-
-    #mealImage {
-      margin-bottom: 10px;
-    }
-
-    #previewImage {
-      max-width: 300px;
-      margin-top: 10px;
-    }
-
-    .Form
-    {
-      margin: 5%;
-      border: 1px solid black;
-      width: 30%;
-      padding: 30px;
-    }
-  </style>
+  
 </head>
 
 <body>
@@ -39,19 +18,17 @@
                 <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
               </svg></a>
           </li>
-          <li><a href="adminPaneli.php">Günün Yemeği</a></li>
+          <li><a href="adminPaneli.php">Admin paneli</a></li>
           <li><a href="#">Duyurular</a></li>
           <li><a href="#">Aylık Yemek Liste</a></li>
-          <li><a href="#">Forum</a></li>
           <li><a href="#">İletişim</a></li>
           <li><a href="#">Giriş Yap</a></li>
         </ul>
         <ul>
           <li><a href="#">Gazi Yemekhane</a></li>
-          <li class="hideOnMobile"><a href="adminPaneli.php">Günün Yemeği</a></li>
+          <li class="hideOnMobile"><a href="adminPaneli.php">Admin paneli</a></li>
           <li class="hideOnMobile"><a href="#">Duyurular</a></li>
           <li class="hideOnMobile"><a href="#">Aylık Yemek Liste</a></li>
-          <li class="hideOnMobile"><a href="#">Forum</a></li>
           <li class="hideOnMobile"><a href="#">İletişim</a></li>
           <li class="hideOnMobile"><a href="#">Giriş Yap</a></li>
           <li class="menu-button" onclick="showSidebar()">
@@ -62,29 +39,34 @@
         </ul>
       </nav>
     </div>
+    <div class="label"> <p>ADMİN</p>
+    <button class="logout">Çıkış yap</button>
+    </div>
+    
     <div class="Form">
       <form action="form.php" method="post">
         <div class="form-group">
-          <label for="mealName">Yemek İsmi:</label>
-          <input type="text" name="mealName" id="mealName" />
+          <label for="mealName">Yemek İsmi</label><br>
+          <input class="labelbox" type="text" name="mealName" id="mealName" placeholder="Yemek İsmi" />
+
         </div>
         <div class="form-group">
-          <label for="mealType">Yemek Türü:</label>
-          <input type="text" name="mealType" id="mealType" />
+          <label for="mealType">Yemek türü giriniz</label><br>
+          <input class="labelbox" type="text" name="mealType" id="mealType" placeholder="Yemek türü giriniz" />
         </div>
 
         <div class="form-group">
-          <label for="calories">Yemek Kalorisi:</label>
-          <input type="number" name="calories" />
+          <label for="calories">Yemek kalorisi giriniz</label><br>
+          <input class="labelbox" type="number" name="calories" id="calories" placeholder="Yemek kalorisi giriniz"/>
         </div>
 
         <div class="form-group">
-          <label for="vegetarian">Vejetaryen:</label>
-          <input type="checkbox" name="vegetarian" />
+          <label for="vegetarian">Vejetaryen mi?</label><br>
+          <input type="checkbox" name="vegetarian" id="vegetarian" />
         </div>
 
         <div class="form-group">
-          <label for="mealImage">Yemek Resmi:</label>
+          <label for="mealImage">Yemek Resmi:</label><br>
           <input type="file" name="mealImage" accept="image/*" />
         </div>
 
@@ -104,7 +86,7 @@
   </div>
 
 
-
+<script src="index.js"></script>
 </body>
 
 </html>
