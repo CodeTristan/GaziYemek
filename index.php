@@ -49,7 +49,7 @@
     </div>
 
     <!---------------- SLIDER --------------->
-    <div id="myCarousel" style="padding-bottom:5%; justify-content:center; align-items:center;" class="carousel slide" data-bs-ride="carousel" carousel-fade>
+    <div id="myCarousel" style="padding-bottom:15%; justify-content:center; align-items:center;" class="carousel slide" data-bs-ride="carousel" carousel-fade>
       <ul class="carousel-indicators">
         <?php
         require 'dbConfig.php';
@@ -63,13 +63,18 @@
         if ($query->num_rows > 0) {
           $slide = 0;
           $active = "active";
+          $slideID=0;
+
           while ($row = $query->fetch_assoc()) {
+            $imageURL = 'images/' . $row["Food_Type"] . '/' . $row["File_name"];
+            $name = $row["Name"];
         ?>
-            <li style="background-color: #777; height:10px; width: 50px;" data-bs-target="#myCarousel" data-bs-slide-to="<?php echo $slide ?>" class="<?php echo $active ?>">
+            <li id="<?php echo $slideID?>"style="border: 1px solid black; margin-left: 2.5%; background-image: url('<?php echo $imageURL ?>');height:200px; width: 200px; background-position: center;background-size: contain;background-repeat: no-repeat;" data-bs-target="#myCarousel" data-bs-slide-to="<?php echo $slide ?>" class="<?php echo $active ?>">
           </li>
         <?php
             $slide++;
             $active = "";
+            $slideID++;
           }
         }
         ?>
@@ -94,6 +99,7 @@
             $name = $row["Name"];
             $calori = $row["Calorie"];
         ?>
+            
             <div class="carousel-item <?php echo $activeSlide ?>">
               <div class="overlay-image" style="background-image:url('<?php echo $imageURL ?>')">
                 <div class="content">
