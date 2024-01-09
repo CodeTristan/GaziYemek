@@ -3,16 +3,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  background: rgba(248,249,250,255);
 }
 body {
   display: flex;
   padding: 0;
   justify-content: center;
   min-height: 100vh;
-  background: #fff;
-
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,6 +18,7 @@ body {
 }
 .header {
   width: 100%;
+  background: rgba(16,57,113,255);
 }
 .wrapper-calendar {
   width: 100%;
@@ -30,7 +29,7 @@ body {
 
 /*--------------------SIDEBAR-------------------------*/
 nav {
-  background-color: white;
+  background-color: rgba(16,57,113,255);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 nav ul {
@@ -81,8 +80,15 @@ nav li:first-child {
 .menu-button {
   display: none;
 }
-
+.sidebar-nav {
+  background: rgba(16,57,113,255);
+}
+/*---------Slider---------*/
+#myCarousel {
+  border-top: 2px solid rgba(16,57,113,255);
+}
 .carousel-item {
+    
     height: 30rem;
     background-position: center;
     background-size: contain;
@@ -104,22 +110,95 @@ nav li:first-child {
   }
 
   .content {
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    position:absolute;
-    background:rgba(255, 253, 253, 0.6);
-    display: flex;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    background:transparent;
+  }
+  .content h6{
+    position: relative;
+    background:transparent;
+    transform: translateX(-50%);
+    text-align: center;
+    left: 50%;
+  }
+  /*--------Rating-----------*/
+  .rating-wrapper {
+    border-top: 2px solid rgba(16,57,113,255);
+    border-bottom: 2px solid rgba(16,57,113,255);
+    padding: 10px;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    opacity: 0;
-    transition: 0.6s;
+    text-align: center;
   }
-  .content:hover{
-    opacity:1;
+  .rating {
+    display: flex;
+    height:6vh;
+    width:100%;
+    padding: 2%;
+    margin-top: 1%
   }
+
+  .rating div {
+    color: rgba(16,57,113,255);
+    font-size: 3vh;
+    font-family: sans-serif;
+    font-weight:800;
+    text-align: center;
+    text-transform: uppercase;
+
+  }
+
+  .rating input {
+    display: none;
+
+  }
+
+  .rating input + label {
+    font-size: 4vh;
+    cursor: pointer;
+  }
+
+  .rating input:checked + label ~ label {
+    color: #bdbbbb;
+  }
+
+  .rating label:active {
+    transform: scale(0.8);
+    transition: 0.3s ease;
+  }
+
+.star-icon{
+  padding-left: 5%;
+}
+.star-icon, .headRating{
+  display: flex;
+  justify-content: start;
+  text-align: start;
+}
+
+.rating-submit {
+  width: 100%;
+  background-color: rgba(16,57,113,255);
+  color: white;
+  margin-top: 3%;
+}
+
+.rating-image {
+  height: 4vh;
+  width: 6vh;
+  padding-right: 10px;
+  border-radius: 6vh;
+  position: relative;
+}
+
+.rating-image img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 @media screen and (max-width: 1000px) {
   .wrapper .carousel {
