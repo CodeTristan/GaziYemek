@@ -38,7 +38,7 @@
           <li class="hideOnMobile"><a href="#">Aylık Yemek Liste</a></li>
           <li class="hideOnMobile"><a href="#">Forum</a></li>
           <li class="hideOnMobile"><a href="#">İletişim</a></li>
-          <li class="hideOnMobile"><a href="#">Giriş Yap</a></li>
+          <li class="hideOnMobile"><a href="login.php">Giriş Yap</a></li>
           <li class="menu-button" onclick="showSidebar()">
             <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                 <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
@@ -63,14 +63,14 @@
         if ($query->num_rows > 0) {
           $slide = 0;
           $active = "active";
-          $slideID=0;
+          $slideID = 0;
 
           while ($row = $query->fetch_assoc()) {
             $imageURL = 'images/' . $row["Food_Type"] . '/' . $row["File_name"];
             $name = $row["Name"];
         ?>
-            <li id="<?php echo $slideID?>"style="border: 1px solid black; margin-left: 2.5%; background-image: url('<?php echo $imageURL ?>');height:200px; width: 200px; background-position: center;background-size: contain;background-repeat: no-repeat;" data-bs-target="#myCarousel" data-bs-slide-to="<?php echo $slide ?>" class="<?php echo $active ?>">
-          </li>
+            <li id="<?php echo $slideID ?>" style="border: 1px solid black; margin-left: 2.5%; background-image: url('<?php echo $imageURL ?>');height:200px; width: 200px; background-position: center;background-size: contain;background-repeat: no-repeat;" data-bs-target="#myCarousel" data-bs-slide-to="<?php echo $slide ?>" class="<?php echo $active ?>">
+            </li>
         <?php
             $slide++;
             $active = "";
@@ -99,7 +99,7 @@
             $name = $row["Name"];
             $calori = $row["Calorie"];
         ?>
-            
+
             <div class="carousel-item <?php echo $activeSlide ?>">
               <div class="overlay-image" style="background-image:url('<?php echo $imageURL ?>')">
                 <div class="content">
@@ -107,7 +107,7 @@
                   <h1>Kalori:<?php echo $calori ?></h1>
                 </div>
               </div>
-              
+
             </div>
           <?php
             $activeSlide = "";
