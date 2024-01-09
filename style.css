@@ -32,6 +32,7 @@ body {
 nav {
   background-color: white;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid black;
 }
 nav ul {
   width: 100%;
@@ -99,21 +100,38 @@ nav li:first-child {
 .Form {
   margin: 0px 0px 0px 400px;
   border: 1px solid black;
-  width: 500px;
+  width: 60%;
   padding: 30px;
   justify-content: center;
   position: static;
   background-color: white;
 }
+
 .form-group {
   height: 50px;
 }
+
 .label {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 40px;
   font-size: 40px;
+}
+
+.meal-list {
+  margin: 0px 0px 0px 400px;
+  border: 1px solid black;
+  width: 60%;
+  padding: 30px;
+  justify-content: center;
+  background-color: white;
+  height: 700px;
+}
+.meal-list label,
+select {
+  display: block;
+  margin-bottom: 10px;
 }
 
 .logout {
@@ -123,9 +141,80 @@ nav li:first-child {
   color: white;
 }
 .labelbox {
-  width: 350px;
+  width: 50%;
 }
-/*-----------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------
+-----*/
+.sub-menu-wrap {
+  margin-top: 0px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 250px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s;
+  border: 1px black solid;
+  background-color: beige;
+  font-size: 17px;
+  z-index: 1;
+  cursor: pointer;
+}
+.sub-menu-wrap.open-menu {
+  max-height: 300px;
+}
+.sub-menu {
+  background: #fff;
+  padding: 10px;
+  margin: 7px;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+}
+.user-info h2 {
+  font-weight: 500;
+  font-size: 17px;
+}
+.user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.sub-menu hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+  margin: 15px 0 10px;
+}
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin: 10px 0;
+}
+.sub-menu-link p {
+  width: 50%;
+}
+.sub-menu-link img {
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 1px;
+  width: 100px;
+  height: 70px;
+}
+.sub-menu-link span {
+  font-size: 22px;
+  transition: transform 0.5s;
+}
+.sub-menu-link:hover span {
+  transform: translateX(5px);
+}
+.sub-menu-link:hover p {
+  font-weight: 600;
+}
 /*--------------------------------------mobil----------------------------------*/
 @media screen and (max-width: 1000px) {
   .wrapper .carousel {
