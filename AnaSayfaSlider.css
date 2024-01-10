@@ -64,80 +64,66 @@ body {
   left: 50%;
 }
 /*--------Rating-----------*/
+
 .rating-wrapper {
-  border-top: 2px solid rgba(16, 57, 113, 255);
-  border-bottom: 2px solid rgba(16, 57, 113, 255);
-  padding: 10px;
+  margin-top: 2vh;
+}
+.rating-container {
+  width: 100%;
+  padding-bottom: 2vh;
+  margin-bottom: 2vh;
+  border-top: 1px solid rgba(16, 57, 113, 255)
+}
+.rating-container h3 {
+  display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 .rating {
   display: flex;
-  height: 6vh;
-  width: 100%;
-  padding: 2%;
-  margin-top: 1%;
-}
-
-.rating div {
-  color: rgba(16, 57, 113, 255);
-  font-size: 3vh;
-  font-family: sans-serif;
-  font-weight: 800;
   text-align: center;
-  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+ 
 }
 
 .rating input {
   display: none;
 }
 
-.rating input + label {
-  font-size: 4vh;
+.rating label {
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin: 0 4px;
 }
 
-.rating input:checked + label ~ label {
-  color: #bdbbbb;
+.rating label:before {
+  content: '\2605';
+  font-size: 3vh;
+  color: lightgray; /* Gri renk */
 }
 
-.rating label:active {
-  transform: scale(0.8);
-  transition: 0.3s ease;
+.rating input:checked ~ label:before {
+  color: #ffcc00; /* Altın rengi */
 }
 
-.star-icon {
-  padding-left: 5%;
-}
-.star-icon,
-.headRating {
-  display: flex;
-  justify-content: start;
-  text-align: start;
+.rating-container .rating-image {
+  padding-top:1vh;
+  height: 5vh;
+  max-width: 10vh;
+  padding-right: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .rating-submit {
   width: 100%;
   background-color: rgba(16, 57, 113, 255);
   color: white;
-  margin-top: 3%;
-}
-
-.rating-image {
-  height: 4vh;
-  width: 6vh;
-  padding-right: 10px;
-  border-radius: 6vh;
-  position: relative;
-}
-
-.rating-image img {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 50%;
-  transform: translateY(-50%);
 }
 /* ---------------------- Duyuru --------------------------- */
 #duyuru-slider {
