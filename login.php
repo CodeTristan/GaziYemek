@@ -20,7 +20,7 @@
             </div>
             <div class="box signin">
                 <div class="input-box">
-                    <form action="" method="post" id="signinform" onkeydown="if(event.keyCode === 13) { return false;}">
+                    <form action="loginForm.php" method="post" id="signinform" onkeydown="if(event.keyCode === 13) { return false;}">
                         <header>Sign in</header>
                         <?php
                             if(isset($_GET['error'])){ ?>
@@ -47,10 +47,17 @@
             <div class="box signup">
 
                 <div class="input-box">
-                    <form action="" method="post" id="signupform" onkeydown="if(event.keyCode === 13) { return false;}">
+                    <form action="signupForm.php" method="post" id="signupform" onkeydown="if(event.keyCode === 13) { return false;}">
 
                         <header>Sign up</header>
-                        
+                        <?php
+                            if(isset($_GET['success'])){ ?>
+                                <div class="success-msg"><?php echo $_GET['success'];?></div>
+                        <?php  } ?>
+                        <?php
+                            if(isset($_GET['errorsu'])){ ?>
+                                <div class="error-msg"><?php echo $_GET['errorsu    '];?></div>
+                        <?php  } ?>
                         <div class="input-field">
                             <input type="text" class="input" id="email" name="email" required="">
                             <label for="email">Email</label>

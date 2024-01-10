@@ -1,4 +1,5 @@
 <?php
+require "dbConfig.php";
 
 $name = $_POST["name"];
 $email = $_POST["email"];
@@ -20,7 +21,7 @@ if ($cpassword != $password) {
 
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-require "dbConfig.php";
+
 
 $sql = "INSERT INTO user (ID,UserName,Mail,UserPassword) VALUES (NULL,'$name','$email','$hashed_password')";
 
