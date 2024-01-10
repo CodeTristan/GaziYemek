@@ -161,6 +161,19 @@ select {
   font-weight: 600;
 }
 
+
+.anaYemekveVejetaryen {
+  display: flex;
+  align-items: center; /* Yükseklik farklarına karşı dikey hizalama */
+
+}
+
+.anaYemekveVejetaryen select 
+{
+  margin-right: 30px; /* İki select arasında boşluk bırakmak için */
+}
+
+
 /*--------------------------------------mobil----------------------------------*/
 @media screen and (max-width: 1000px) {
   .wrapper .carousel {

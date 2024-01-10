@@ -4,9 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" >
-  <link rel="stylesheet" href="header.css">
-  
+  <link rel="stylesheet" href="adminPanelCss.css">
+
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
@@ -20,79 +19,103 @@
   <?php include 'header.php' ?>
 
   <div class="label">
-      <p>ADMİN</p>
-    </div>
+    <p>ADMİN</p>
+  </div>
 
-    <div class="Form">
-      <form action="form.php" method="post">
-        <div class="form-group">
-          <label for="mealName">Yemek İsmi</label><br />
-          <input class="labelbox" type="text" name="mealName" id="mealName" placeholder="Yemek İsmi" />
-        </div>
-        <div class="form-group">
-          <label for="mealType">Yemek türü giriniz</label><br />
-          <input class="labelbox" type="text" name="mealType" id="mealType" placeholder="Yemek türü giriniz" />
-        </div>
-
-        <div class="form-group">
-          <label for="calories">Yemek kalorisi giriniz</label><br />
-          <input class="labelbox" type="number" name="calories" id="calories" placeholder="Yemek kalorisi giriniz" />
-        </div>
-
-        <div class="form-group">
-          <label for="vegetarian">Vejetaryen mi?</label><br />
-          <input type="checkbox" name="vegetarian" id="vegetarian" />
-        </div>
-
-        <div class="form-group">
-          <label for="mealImage">Yemek Resmi:</label><br />
-          <input type="file" name="mealImage" accept="image/*" />
-        </div>
-
-        <img id="previewImage" alt="Yemek Resmi Görüntüsü" />
-
-        <button onclick="addMeal()">Ekle</button>
-        <button onclick="clearMeals()">Temizle</button>
+  <div class="Form">
+    <form action="adminPaneliAddingFood.php" method="post">
+      <div class="form-group">
+        <label for="mealName">Yemek İsmi</label><br />
+        <input class="labelbox" type="text" name="mealName" id="mealName" placeholder="Yemek İsmi" />
+      </div>
+      <div class="form-group">
+        <label for="mealType">Yemek türü giriniz</label><br />
+        <select id="mealType" name="mealType">
+          <option value="" disabled selected>- Seçiniz -</option>
+          <option value="Ana Yemek">- Ana Yemek -</option>
+          <option value="Çorba">- Çorbalar -</option>
+          <option value="Pilav-Ara Sıcak">- Ara Sıcak / Pilav -</option>
+          <option value="Tatlı-Meyve-Salata">- Tatlı / Meyve / Salata -</option>
 
 
+        </select>
+      </div>
 
-        <
-      </form>
-    </div>
-    <div class="meal-list" id="mealList">
+      <div class="form-group">
+        <label for="calories">Yemek kalorisi giriniz</label><br />
+        <input class="labelbox" type="number" name="calories" id="calories" placeholder="Yemek kalorisi giriniz" />
+      </div>
+
+      <div class="form-group">
+        <label for="vegetarian">Vejetaryen mi?</label><br />
+        <input type="checkbox" value="true" name="isVegetarian" id="vegetarian" />
+      </div>
+
+      <div class="form-group">
+        <label for="mealImage">Yemek Resmi:</label><br />
+        <input type="file" name="mealImage" accept="image/*" />
+      </div>
+
+      <img id="previewImage" alt="Yemek Resmi Görüntüsü" />
+
+      <button onclick="addMeal()">Ekle</button>
+      <button onclick="clearMeals()">Temizle</button>
+
+
+
+      < </form>
+  </div>
+  <div class="meal-list" id="mealList">
+    <form action="adminPaneliAddingMenu.php" method="post">
       <label for="anaYemek">Ana Yemek Seçiniz:</label>
-      <select id="anaYemek" name="anaYemek">
-        <option value="" disabled selected>- Seçiniz -</option>
-        <?php
-            require "dbconfig.php";
-            $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Ana Yemek'");
-            $i = 0;
-            while ($row = $query->fetch_assoc()) 
-            {
-              ?>
-              <option value=<?php echo "Anayemek" . $i ?>><?php echo $row["Name"]?></option>
+      <div class="anaYemekveVejetaryen">
+        <select id="anaYemek" name="anaYemek">
+          <option value="" disabled selected>- Seçiniz -</option>
+          <?php
+          require "dbconfig.php";
+          $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Ana Yemek' and isVegetarian = 0");
+          $i = 0;
+          while ($row = $query->fetch_assoc()) {
+            ?>
+            <option value="<?php echo $row["Name"]?>"><?php echo $row["Name"] ?></option>
 
-              <?php
-              $i++;
-            }
-        ?>      
-      </select>
+            <?php
+            $i++;
+          }
+          ?>
+        </select>
+        <label for="vejetaryen">Vejetaryen Yemek Seçiniz:</label>
+        <select id="VejetaryenSelect" name="VejetaryenSelect">
+          <option value="" disabled selected>- Seçiniz -</option>
+          <?php
+          require "dbconfig.php";
+          $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Ana Yemek' and isVegetarian = 1");
+          $i = 0;
+          while ($row = $query->fetch_assoc()) {
+            ?>
+            <option value="<?php echo $row["Name"] ?>"><?php echo $row["Name"] ?></option>
+
+            <?php
+            $i++;
+          }
+          ?>
+        </select>
+      </div>
 
       <label for="corba">Çorba Seçiniz:</label>
       <select id="corba" name="corba">
         <option value="" disabled selected>- Seçiniz -</option>
         <?php
-            require "dbconfig.php";
-            $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Çorba'");
-            $i = 0;
-            while ($row = $query->fetch_assoc()) 
-            {
-              ?>
-              <option value=<?php echo "Çorba" . $i ?>><?php echo $row["Name"]?></option>
+        require "dbconfig.php";
+        $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Çorba'");
+        $i = 0;
+        while ($row = $query->fetch_assoc()) {
+          ?>
+          <option value="<?php echo $row["Name"]?>"><?php echo $row["Name"] ?></option>
 
-              <?php
-              $i++;
-            }
+          <?php
+          $i++;
+        }
         ?>
 
       </select>
@@ -101,19 +124,18 @@
       <select id="pilavAraSicak" name="pilavAraSicak">
         <option value="" disabled selected>- Seçiniz -</option>
         <?php
-            require "dbconfig.php";
-            $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Pilav-Ara Sıcak'");
-            $i = 0;
-            while ($row = $query->fetch_assoc()) 
-            {
-              ?>
-              <option value=<?php echo "Anayemek" . $i ?>><?php echo $row["Name"]?></option>
+        require "dbconfig.php";
+        $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Pilav-Ara Sıcak'");
+        $i = 0;
+        while ($row = $query->fetch_assoc()) {
+          ?>
+          <option value="<?php echo $row["Name"] ?>"><?php echo $row["Name"] ?></option>
 
-              <?php
-              $i++;
-            }
+          <?php
+          $i++;
+        }
         ?>
-       
+
 
       </select>
 
@@ -121,30 +143,30 @@
       <select id="tatliMeyveSalata" name="tatliMeyveSalata">
         <option value="" disabled selected>- Seçiniz -</option>
         <?php
-            require "dbconfig.php";
-            $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Tatlı-Meyve-Salata'");
-            $i = 0;
-            while ($row = $query->fetch_assoc()) 
-            {
-              ?>
-              <option value=<?php echo "Anayemek" . $i ?>><?php echo $row["Name"]?></option>
+        require "dbconfig.php";
+        $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Tatlı-Meyve-Salata'");
+        $i = 0;
+        while ($row = $query->fetch_assoc()) {
+          ?>
+          <option value="<?php echo $row["Name"] ?>"><?php echo $row["Name"] ?></option>
 
-              <?php
-              $i++;
-            }
+          <?php
+          $i++;
+        }
         ?>
-        
+
       </select>
-  <div class="form-group">
-  <label for="selectedDate">Tarih Seçiniz:</label><br />
-  <input class="labelbox" type="text" name="selectedDate" id="selectedDate" placeholder="Tarih Seçiniz" />
-  <button> Submit</button>
-</div>
+      <div class="form-group">
+        <label for="selectedDate">Tarih Seçiniz:</label><br />
+        <input class="labelbox" type="text" name="selectedDate" id="selectedDate" placeholder="Tarih Seçiniz" />
+        <button> Submit</button>
 
-  
+      </div>
 
-    </div>
-    
+
+    </form>
+  </div>
+
   </div>
 
   <script src="index.js"></script>
