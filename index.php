@@ -54,6 +54,7 @@
       <ul class="carousel-indicators">
         <?php
         require 'dbConfig.php';
+        date_default_timezone_set('Europe/Istanbul');
         $today = date("Y-m-d");
         $query = $db->query("SELECT food.Name, food.Calorie, Food.File_name, menu.Date,food.Food_Type
                           from food_has_menu 
