@@ -216,12 +216,10 @@ button {
         flex-direction: column;
     }
 
-
-
     .signin {
         top: 5%;
         display: relative;
-        transition: 0.5s;
+        transition: 0.3s;
         left: 0;
     }
 
@@ -232,7 +230,7 @@ button {
     .signup {
         top: 5%;
         display: relative;
-        transition: 0.5s;
+        transition: 0.3s;
         right: -100%;
     }
 
