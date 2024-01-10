@@ -103,8 +103,6 @@
   </div>
 
   <div id="Yemekpuan" class="rating-wrapper">
-
-    
     <form action="rating.php" method="post">
       <h3>Günün Yemeğini Puanla!</h3>
         <?php
@@ -149,9 +147,9 @@
 
         }
         ?>
-      <input class="rating-submit" type="submit" value="Gönder">
     </form>
   </div>
+  <input class="rating-submit" type="submit" value="Gönder">
 
   <div class="textg">
     <p>Duyurular</p>
