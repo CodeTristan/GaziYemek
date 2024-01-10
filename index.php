@@ -101,6 +101,7 @@
     
     <div id="Yemekpuan" class="rating-wrapper">
       <h3>Günün Yemeğini Puanla!</h3>
+      <form action = "rating.php" method = "post">
       <?php
       require 'dbConfig.php';
       $today = date("Y-m-d");
@@ -127,30 +128,31 @@
             <img src="<?php echo $imageURL ?>" class="rating-image">
             <h3 class="headRating"><?php echo $name ?></h3>
             <div class="star-icon">
+              <input type="radio"  name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
+              <label for="rating<?php echo $id ?>" class="fa fa-star"></label>
+              <?php $id++; $rating++;?>
+              <input type="radio"  name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
+              <label for="rating<?php echo $id ?>" class="fa fa-star"></label>
+              <?php $id++; $rating++; ?>
+              <input type="radio"  name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
+              <label for="rating<?php echo $id ?>" class="fa fa-star"></label>
+              <?php $id++; $rating++; ?>
               <input type="radio" name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
               <label for="rating<?php echo $id ?>" class="fa fa-star"></label>
-              <?php $id++ ?>
+              <?php $id++; $rating++; ?>
               <input type="radio" name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
               <label for="rating<?php echo $id ?>" class="fa fa-star"></label>
-              <?php $id++ ?>
-              <input type="radio" name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
-              <label for="rating<?php echo $id ?>" class="fa fa-star"></label>
-              <?php $id++ ?>
-              <input type="radio" name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
-              <label for="rating<?php echo $id ?>" class="fa fa-star"></label>
-              <?php $id++ ?>
-              <input type="radio" name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
-              <label for="rating<?php echo $id ?>" class="fa fa-star"></label>
-              <?php $id++ ?>
+              <?php $id++; $rating++; ?>
             </div>
           </div>
       <?php
-          $rating++;
+          //$rating++;
 
         }
       }
       ?>
       <input class="rating-submit" type="submit" value="Gönder">
+    </form>
     </div>
 
     <div class="textg"><p>Duyurular</p></div>
