@@ -10,72 +10,93 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="container main">
-            <div class="row">
-                <div class="col-md-6 side-image">
 
-                    <img src="images/Gazi_Üniversitesi_logo.png">
+    <div class="main">
+        <div class="row">
+            <div class="side-image">
 
+                <img src="images/Gazi_Üniversitesi_logo.png">
+
+            </div>
+            <div class="box signin">
+                <div class="input-box">
+                    <form action="loginForm.php" method="post">
+                        <header>Sign in</header>
+                        <div class="input-field">
+                            <input type="text" class="input" id="email" name="email" required="">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" class="input" id="pass" name="password" required="">
+                            <label for="pass">Password</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="submit" class="submit" value="Sign In">
+                        </div>
+                        <div class="signintext">
+                            <span>Already have an account? <button class="signupbutton" type="button">Sign up here</button></span>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-md-6 signin">
-                    <div class="input-box">
-                        <form action="loginForm.php" method="post">
-                            <header>Sign in</header>
-                            <div class="input-field">
-                                <input type="text" class="input" id="email" name="email" required="">
-                                <label for="email">Email</label>
-                            </div>
-                            <div class="input-field">
-                                <input type="password" class="input" id="pass" name="password" required="">
-                                <label for="pass">Password</label>
-                            </div>
-                            <div class="input-field">
-                                <input type="submit" class="submit" value="Sign In">
-                            </div>
-                            <div class="signin">
-                                <span>Already have an account? <a href="#">Log in here</a></span>
-                            </div>
-                        </form>
-                    </div>
 
-                </div>
-                <div class="col-md-6 signup">
+            </div>
+            <div class="box signup">
 
-                    <div class="input-box">
-                        <form action="signupForm.php" method="post">
+                <div class="input-box">
+                    <form action="signupForm.php" method="post">
 
-                            <header>Sign up</header>
-                            <div class="input-field">
-                                <input type="text" class="input" id="email" name="email" required="">
-                                <label for="email">Email</label>
-                            </div>
-                            <div class="input-field">
-                                <input type="text" class="input" id="name" name="name" required="" autocomplete="off">
-                                <label for="pass">Name Surname</label>
-                            </div>
+                        <header>Sign up</header>
+                        <div class="input-field">
+                            <input type="text" class="input" id="email" name="email" required="">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" class="input" id="name" name="name" required="" autocomplete="off">
+                            <label for="pass">Name Surname</label>
+                        </div>
 
-                            <div class="input-field">
-                                <input type="password" class="input" id="pass" name="password" required="" autocomplete="off">
-                                <label for="pass">Password</label>
-                            </div>
-                            <div class="input-field">
-                                <input type="password" class="input" id="pass" name="confirmPassword" required="" autocomplete="off">
-                                <label for="pass">Confirm Password</label>
-                            </div>
-                            <div class="input-field">
-                                <input type="submit" class="submit" value="Sign Up">
-                            </div>
-                            <div class="signin">
-                                <span>Already have an account? <a href="#">Log in here</a></span>
-                            </div>
+                        <div class="input-field">
+                            <input type="password" class="input" id="pass" name="password" required="" autocomplete="off">
+                            <label for="pass">Password</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" class="input" id="pass" name="confirmPassword" required="" autocomplete="off">
+                            <label for="pass">Confirm Password</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="submit" class="submit" value="Sign Up">
+                        </div>
+                        <div class="signintext">
+                            <span>Already have an account? <button class="signinbutton" type="button">Sign in here</button></span>
+                        </div>
 
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        const signinbtn = document.querySelector('.signinbutton');
+        const signupbtn = document.querySelector('.signupbutton');
+
+        const signin = document.querySelector('.signin');
+        const signup = document.querySelector('.signup');
+
+        const bar = document.querySelector('.side-image');
+
+        signupbtn.onclick = function() {
+            bar.classList.add('active');
+            signin.classList.add('active');
+            signup.classList.add('active');
+
+        }
+        signinbtn.onclick = function() {
+            bar.classList.remove('active');
+            signin.classList.remove('active');
+            signup.classList.remove('active');
+
+        }
+    </script>
 </body>
 
 </html>
