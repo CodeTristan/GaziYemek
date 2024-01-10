@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2024 at 06:32 PM
+-- Generation Time: Jan 10, 2024 at 03:00 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -66,7 +66,14 @@ INSERT INTO `food` (`ID`, `File_name`, `Name`, `Created`, `Modified`, `Calorie`,
 (1, 'Mercimek.png', 'Mercimek Çorbası', '2023-01-12 16:19:36', '2023-01-12 16:19:36', 250, 1, 'Çorba'),
 (2, 'köfte.jpg', 'İzmir Köfte', '2023-01-12 16:19:36', '2023-01-12 16:19:36', 120, 0, 'Ana Yemek'),
 (3, 'Pirinç Pilavı.png', 'Pirinç Pilavı', '2023-01-12 16:19:36', '2023-01-12 16:19:36', 180, 1, 'Pilav-Ara Sıcak'),
-(4, 'portakal.jpg', 'Portakal', '2023-01-12 16:19:36', '2023-01-12 16:19:36', 50, 1, 'Tatlı-Meyve-Salata');
+(4, 'portakal.jpg', 'Portakal', '2023-01-12 16:19:36', '2023-01-12 16:19:36', 50, 1, 'Tatlı-Meyve-Salata'),
+(5, 'Antep Usulü Patates.png', 'Antep Usulü Patates', '2024-01-10 14:18:01', '2024-01-10 14:18:01', 288, 0, 'Ana Yemek'),
+(6, 'Etsiz Kuru Fasulye.png', 'Etsiz Kuru Fasulye', '2024-01-10 14:22:19', '2024-01-10 14:22:19', 267, 1, 'Ana Yemek'),
+(8, 'Yumurtalı Ispanak.png', 'Yumurtalı Ispanak', '2024-01-10 14:30:06', '2024-01-10 14:30:06', 176, 1, 'Ana Yemek'),
+(9, 'Makarna.png', 'Makarna', '2024-01-10 14:32:05', '2024-01-10 14:32:05', 141, 0, 'Pilav-Ara Sıcak'),
+(15, 'Ayran.png', 'Ayran', '2024-01-10 14:34:37', '2024-01-10 14:34:37', 56, 0, 'Tatlı-Meyve-Salata'),
+(17, 'Sup.png', 'Supangle', '2024-01-10 14:36:26', '2024-01-10 14:36:26', 159, 0, 'Tatlı-Meyve-Salata'),
+(18, 'Brokoli Çorbası.png', 'Brokoli Çorbası', '2024-01-10 14:38:30', '2024-01-10 14:38:30', 60, 0, 'Çorba');
 
 -- --------------------------------------------------------
 
@@ -92,7 +99,12 @@ INSERT INTO `food_has_menu` (`ID`, `Food_ID`, `Menu_ID`) VALUES
 (7, 1, 2),
 (8, 2, 2),
 (9, 3, 2),
-(10, 4, 2);
+(10, 4, 2),
+(37, 5, 30),
+(38, 18, 30),
+(39, 9, 30),
+(40, 15, 30),
+(41, 6, 30);
 
 -- --------------------------------------------------------
 
@@ -110,8 +122,9 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`ID`, `Date`) VALUES
-(1, '2024-01-04'),
-(2, '2024-01-06');
+(1, '2024-01-09'),
+(2, '2024-01-12'),
+(30, '2024-01-10');
 
 -- --------------------------------------------------------
 
@@ -241,19 +254,19 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `food`
 --
 ALTER TABLE `food`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `food_has_menu`
 --
 ALTER TABLE `food_has_menu`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `score`
