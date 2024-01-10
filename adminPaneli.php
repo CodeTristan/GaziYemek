@@ -108,7 +108,7 @@
 
 
 
-        <input type="submit" name="submit" value="tıkla la" />
+        <
       </form>
     </div>
     <div class="meal-list" id="mealList">
