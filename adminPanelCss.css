@@ -1,5 +1,3 @@
-/* Import Google font - Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -17,15 +15,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-.header {
-  width: 100%;
-}
-.wrapper-calendar {
-  width: 100%;
-}
-.adminPanel {
-  width: 100%;
+  overflow-y: auto;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -39,8 +29,11 @@ body {
 }
 
 #previewImage {
+  width: 300px;
   max-width: 300px;
+
   margin-top: 10px;
+  border: 1px solid black;
 }
 
 .Form {
@@ -62,6 +55,7 @@ body {
   align-items: center;
   justify-content: space-between;
   font-size: 40px;
+  margin: 30px;
 }
 
 .meal-list {
@@ -80,6 +74,7 @@ select {
 .takvimharic {
   display: flex;
   flex-wrap: wrap;
+  height: 700px;
 }
 .labelbox {
   width: 50%;

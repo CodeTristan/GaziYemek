@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Fontawesome Link for Icons -->
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <script src="index.js" defer></script>
 </head>
@@ -104,7 +104,9 @@
 
   <div id="Yemekpuan" class="rating-wrapper">
     <form action="rating.php" method="post">
-      <h3>Günün Yemeğini Puanla!</h3>
+    <div class="textg">
+    <p>Günün yemeğini puanla!</p>
+    </div>
         <?php
         require 'dbConfig.php';
         $today = date("Y-m-d");

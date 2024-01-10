@@ -53,7 +53,7 @@
 
       <div class="form-group">
         <label for="mealImage">Yemek Resmi:</label><br />
-        <input type="file" name="mealImage" accept="image/*" required/>
+        <input type="file" name="mealImage" accept="image/*" required onchange="previewMealImage(this)"/>
       </div>
 
       <img id="previewImage" alt="Yemek Resmi Görüntüsü" />
@@ -63,7 +63,7 @@
 
 
 
-      < </form>
+       </form>
   </div>
   <div class="meal-list" id="mealList">
     <form action="adminPaneliAddingMenu.php" method="post">

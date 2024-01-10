@@ -52,3 +52,19 @@ function nextDuyuru() {
 setInterval(nextDuyuru, 20000);
 
 showDuyuru(currentIndex);
+
+function previewMealImage(input) {
+  var preview = document.getElementById("previewImage");
+  var file = input.files[0];
+  var reader = new FileReader();
+
+  reader.onloadend = function () {
+    preview.src = reader.result;
+  };
+
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    preview.src = "";
+  }
+}

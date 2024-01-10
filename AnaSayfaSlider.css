@@ -8,7 +8,7 @@
 }
 body {
   display: flex;
-  padding: 0;
+
   justify-content: center;
   min-height: 100vh;
   background: whitesmoke;
@@ -17,14 +17,12 @@ body {
   background-position: center;
   font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.header {
-  width: 100%;
+
+nav {
+  height: 52.5px;
 }
-.wrapper-calendar {
-  width: 100%;
-}
-.adminPanel {
-  width: 100%;
+.sub-menu-wrap {
+  top: 51px;
 }
 
 /*---------Slider---------*/
@@ -72,7 +70,7 @@ body {
   width: 100%;
   padding-bottom: 2vh;
   margin-bottom: 2vh;
-  border-top: 1px solid rgba(16, 57, 113, 255)
+  border-top: 1px solid rgba(16, 57, 113, 255);
 }
 .rating-container h3 {
   display: flex;
@@ -86,7 +84,6 @@ body {
   justify-content: center;
   align-items: center;
   transform: rotateY(180deg);
- 
 }
 
 .rating input {
@@ -101,7 +98,7 @@ body {
 }
 
 .rating label:before {
-  content: '\2605';
+  content: "\2605";
   font-size: 3vh;
   color: lightgray; /* Gri renk */
 }
@@ -111,7 +108,7 @@ body {
 }
 
 .rating-container .rating-image {
-  padding-top:1vh;
+  padding-top: 1vh;
   height: 5vh;
   max-width: 10vh;
   padding-right: 10px;
@@ -154,8 +151,8 @@ body {
 }
 
 .dot {
-  height: 50px;
-  width: 50px;
+  height: 15px;
+  width: 15px;
   margin: 0 5px;
   background-color: #bbb;
   border-radius: 50%;
@@ -168,6 +165,7 @@ body {
   text-align: center;
   font-size: 35px;
 }
+
 /* ----------------------------------------------------- */
 @media screen and (max-width: 1000px) {
   .wrapper .carousel {

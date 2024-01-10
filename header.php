@@ -8,7 +8,7 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="adminPanel">
+  
     <div class="header">
       <nav>
         <ul class="sidebar">
@@ -42,7 +42,7 @@
           </li>
         </ul>
       </nav>
-    </div>
+    
     
 
     <div class="sub-menu-wrap" id="subMenu">
