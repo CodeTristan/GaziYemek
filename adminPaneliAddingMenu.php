@@ -20,7 +20,8 @@
     if($db->query("SELECT * FROM menu where date = '$selectedDate'")->num_rows > 0)
     {
         echo "Bu tarihte zaten bir menü var";
-        
+        mysqli_close($db);
+        return;
     }
     
     $sql1 = "INSERT INTO menu (ID,Date) 
