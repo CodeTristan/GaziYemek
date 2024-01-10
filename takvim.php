@@ -1,18 +1,55 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="takvim.css">
 </head>
+
 <body>
-<div class="takvim">
-      <div class="box-takvim">
+  <div class="takvim">
+    <?php
+    require "dbConfig.php";
+    date_default_timezone_set('Europe/Istanbul');
+    $today = date("Y-m-d");
+    $month = date('Y-m', strtotime($today));
+    $counter = 0;
+    $row = array();
+
+    for ($i = 1; $i <= 31; $i++) {
+      $day = $month . "-" . $i;
+      $query = $db->query("SELECT food.Name, food.Calorie, menu.Date 
+                          from food_has_menu 
+                          inner join food on food_has_menu.Food_ID = food.ID
+                          inner join menu on food_has_menu.Menu_ID = menu.ID
+                          Where menu.date = '$day'");
+
+      if ($query->num_rows > 0) {
+        $row[$counter] = $query->fetch_assoc();
+        $counter++;
+      }
+
+    }
+
+    ?>
+    <?php
+      $newCounter = 0;
+
+      while ($newCounter < $counter) {
+
+
+
+        ?>
+    <div class="box-takvim">
+      
         <table>
           <thead>
             <tr>
-              <th>18.12.2023 Pazartesi</th>
+              <th>
+                <?php echo $row[$newCounter]["Date"] ?> Pazartesi
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -33,111 +70,13 @@
             </tr>
           </tbody>
         </table>
-      </div>
-      <div class="box-takvim">
-        <table>
-          <thead>
-            <tr>
-              <th>19.12.2023 Salı</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>DOMATES ÇORBASI</td>
-            </tr>
-            <tr>
-              <td>KIYMALI PIRASA</td>
-            </tr>
-            <tr>
-              <td>SOSLU MAKARNA</td>
-            </tr>
-            <tr>
-              <td>AYRAN</td>
-            </tr>
-            <tr>
-              <td>Kalori: 1200</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="box-takvim">
-        <table>
-          <thead>
-            <tr>
-              <th>20.12.2023 Çarşamba</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>KIŞ ÇORBASI</td>
-            </tr>
-            <tr>
-              <td>YOĞURTLU TİRE KÖFTE</td>
-            </tr>
-            <tr>
-              <td>PİRİNÇ PİLAVI</td>
-            </tr>
-            <tr>
-              <td>MEYVE</td>
-            </tr>
-            <tr>
-              <td>Kalori:1200</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="box-takvim">
-        <table>
-          <thead>
-            <tr>
-              <th>21.12.2023 Perşembe</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ISPANAK ÇORBASI</td>
-            </tr>
-            <tr>
-              <td>SEBZELİ TAVUK</td>
-            </tr>
-            <tr>
-              <td>ERİŞTE</td>
-            </tr>
-            <tr>
-              <td>YOĞURT</td>
-            </tr>
-            <tr>
-              <td>Kalori:1150</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="box-takvim">
-        <table>
-          <thead>
-            <tr>
-              <th>22.12.2023 Cuma</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>TEL ŞEHRİYE ÇORBASI</td>
-            </tr>
-            <tr>
-              <td>KIYMALI FIRIN PATATES</td>
-            </tr>
-            <tr>
-              <td>MEVSİM SALATA</td>
-            </tr>
-            <tr>
-              <td>TRİLİÇE</td>
-            </tr>
-            <tr>
-              <td>Kalori:1150</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        
     </div>
+    <?php
+        $newCounter++;
+      }
+      ?>
+  </div>
 </body>
+
 </html>

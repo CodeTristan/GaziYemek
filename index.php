@@ -31,6 +31,7 @@
                           inner join food on food_has_menu.Food_ID = food.ID
                           inner join menu on food_has_menu.Menu_ID = menu.ID
                           Where menu.date = '$today'");
+        
 
         if ($query->num_rows > 0) {
           $slide = 0;
@@ -128,19 +129,19 @@
             <img src="<?php echo $imageURL ?>" class="rating-image">
             <h3 class="headRating"><?php echo $name ?></h3>
             <div class="star-icon">
-              <input type="radio"  name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
+              <input type="radio" value = "true" name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
               <label for="rating<?php echo $id ?>" class="fa fa-star"></label>
               <?php $id++; $rating++;?>
-              <input type="radio"  name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
+              <input type="radio" value = "true" name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
               <label for="rating<?php echo $id ?>" class="fa fa-star"></label>
               <?php $id++; $rating++; ?>
-              <input type="radio"  name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
+              <input type="radio" value = "true" name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
               <label for="rating<?php echo $id ?>" class="fa fa-star"></label>
               <?php $id++; $rating++; ?>
-              <input type="radio" name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
+              <input type="radio" value = "true" name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
               <label for="rating<?php echo $id ?>" class="fa fa-star"></label>
               <?php $id++; $rating++; ?>
-              <input type="radio" name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
+              <input type="radio" value = "true" name="rating<?php echo $rating ?>" id="rating<?php echo $id ?>">
               <label for="rating<?php echo $id ?>" class="fa fa-star"></label>
               <?php $id++; $rating++; ?>
             </div>
