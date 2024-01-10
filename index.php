@@ -16,9 +16,9 @@
 
 <body>
 <?php include 'header.php' ?>
-  <div class="wrapper-calendar">
   
-
+  
+  <div class="textg"><p>20.12.2023 Çarşamba</p></div>
     <!---------------- SLIDER --------------->
     <div id="myCarousel" style="padding-bottom:10%; justify-content:center; align-items:center;" class="carousel slide" data-bs-ride="carousel" carousel-fade>
       <ul class="carousel-indicators">
@@ -98,7 +98,8 @@
         }
     ?>
     </div>
-    <div class="rating-wrapper">
+    
+    <div id="Yemekpuan" class="rating-wrapper">
       <h3>Günün Yemeğini Puanla!</h3>
       <?php
       require 'dbConfig.php';
@@ -151,10 +152,24 @@
       ?>
       <input class="rating-submit" type="submit" value="Gönder">
     </div>
-  </div>
+
+    <div class="textg"><p>Duyurular</p></div>
+
+    <div id="duyuru-slider">
+      <div class="duyuru">
+        <img src="images/duyuru1.png" alt="Duyuru 1" />
+      </div>
+      <div class="duyuru">
+        <img src="images/yemekücret.png" alt="Yemek Ücreti" />
+      </div>
+    </div>
+    <div id="dots-container">
+
+    </div>
   <?php
   //require "mainDBConnection.php";
   ?>
+  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>

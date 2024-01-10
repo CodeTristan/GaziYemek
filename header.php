@@ -18,9 +18,9 @@
               </svg></a>
           </li>
           <li><a href="adminPaneli.php">Admin paneli</a></li>
-          <li><a href="#">Duyurular</a></li>
+          <li><a href="#duyuru-slider">Duyurular</a></li>
           <li><a href="#">Aylık Yemek Liste</a></li>
-          <li><a href="#">İletişim</a></li>
+         
           <li><a href="#">Giriş Yap</a></li>
         </ul>
         <ul>
@@ -29,9 +29,9 @@
             <a href="adminPaneli.php">Admin paneli</a>
           </li>
 
-          <li class="hideOnMobile"><a href="#">Duyurular</a></li>
+          <li class="hideOnMobile"><a href="#duyuru-slider">Duyurular</a></li>
           <li class="hideOnMobile"><a href="#">Aylık Yemek Liste</a></li>
-          <li class="hideOnMobile"><a href="#">İletişim</a></li>
+          
           <li class="hideOnMobile"><a href="#">Giriş Yap</a></li>
           <li class="hideOnMobile"> <img src="images/profile.png" class="user-pic" height="50px" onclick="toggleMenu()" /></li>
 

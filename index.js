@@ -19,3 +19,36 @@ $(function () {
     changeYear: true, // Yıl seçimini aktif et
   });
 });
+
+let currentIndex = 0;
+const duyurular = document.querySelectorAll(".duyuru");
+const dotsContainer = document.getElementById("dots-container");
+
+function showDuyuru(index) {
+  duyurular.forEach((duyuru, i) => {
+    duyuru.style.display = i === index ? "block" : "none";
+  });
+
+  updateDots(index);
+}
+
+function updateDots(index) {
+  dotsContainer.innerHTML = "";
+  for (let i = 0; i < duyurular.length; i++) {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    dot.addEventListener("click", () => showDuyuru(i));
+    dotsContainer.appendChild(dot);
+  }
+
+  dotsContainer.children[index].classList.add("active");
+}
+
+function nextDuyuru() {
+  currentIndex = (currentIndex + 1) % duyurular.length;
+  showDuyuru(currentIndex);
+}
+
+setInterval(nextDuyuru, 20000);
+
+showDuyuru(currentIndex);
