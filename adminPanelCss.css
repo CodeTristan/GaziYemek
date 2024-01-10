@@ -44,9 +44,9 @@ body {
 }
 
 .Form {
-  margin: 0px 0px 0px 400px;
+  margin: 0px 0px 0px 300px;
   border: 1px solid black;
-  width: 60%;
+  width: 35%;
   padding: 30px;
   justify-content: center;
   position: static;
@@ -66,9 +66,9 @@ body {
 }
 
 .meal-list {
-  margin: 0px 0px 0px 400px;
+  margin: 0px 0px 0px 20px;
   border: 1px solid black;
-  width: 60%;
+  width: 35%;
   padding: 30px;
   justify-content: center;
   background-color: white;
@@ -78,16 +78,14 @@ select {
   display: block;
   margin-bottom: 10px;
 }
-
-.logout {
-  background-color: turquoise;
-  width: 100px;
-  height: 30px;
-  color: white;
+.takvimharic {
+  display: flex;
 }
+
 .labelbox {
   width: 50%;
 }
+
 /*------------------------------------------------------------------------------
 -----*/
 .sub-menu-wrap {
@@ -160,19 +158,6 @@ select {
 .sub-menu-link:hover p {
   font-weight: 600;
 }
-
-
-.anaYemekveVejetaryen {
-  display: flex;
-  align-items: center; /* Yükseklik farklarına karşı dikey hizalama */
-
-}
-
-.anaYemekveVejetaryen select 
-{
-  margin-right: 30px; /* İki select arasında boşluk bırakmak için */
-}
-
 
 /*--------------------------------------mobil----------------------------------*/
 @media screen and (max-width: 1000px) {

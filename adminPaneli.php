@@ -21,16 +21,16 @@
   <div class="label">
     <p>ADMİN</p>
   </div>
-
+  <div class="takvimharic">
   <div class="Form">
     <form action="adminPaneliAddingFood.php" method="post">
       <div class="form-group">
         <label for="mealName">Yemek İsmi</label><br />
-        <input class="labelbox" type="text" name="mealName" id="mealName" placeholder="Yemek İsmi" />
+        <input class="labelbox" type="text" name="mealName " id="mealName" placeholder="Yemek İsmi" required/>
       </div>
       <div class="form-group">
         <label for="mealType">Yemek türü giriniz</label><br />
-        <select id="mealType" name="mealType">
+        <select id="mealType" name="mealType" required>
           <option value="" disabled selected>- Seçiniz -</option>
           <option value="Ana Yemek">- Ana Yemek -</option>
           <option value="Çorba">- Çorbalar -</option>
@@ -43,7 +43,7 @@
 
       <div class="form-group">
         <label for="calories">Yemek kalorisi giriniz</label><br />
-        <input class="labelbox" type="number" name="calories" id="calories" placeholder="Yemek kalorisi giriniz" />
+        <input class="labelbox" type="number" name="calories" id="calories" placeholder="Yemek kalorisi giriniz" required/>
       </div>
 
       <div class="form-group">
@@ -53,7 +53,7 @@
 
       <div class="form-group">
         <label for="mealImage">Yemek Resmi:</label><br />
-        <input type="file" name="mealImage" accept="image/*" />
+        <input type="file" name="mealImage" accept="image/*" required/>
       </div>
 
       <img id="previewImage" alt="Yemek Resmi Görüntüsü" />
@@ -69,7 +69,7 @@
     <form action="adminPaneliAddingMenu.php" method="post">
       <label for="anaYemek">Ana Yemek Seçiniz:</label>
       <div class="anaYemekveVejetaryen">
-        <select id="anaYemek" name="anaYemek">
+        <select id="anaYemek" name="anaYemek" >
           <option value="" disabled selected>- Seçiniz -</option>
           <?php
           require "dbconfig.php";
@@ -84,8 +84,8 @@
           }
           ?>
         </select>
-        <label for="vejetaryen">Vejetaryen Yemek Seçiniz:</label>
-        <select id="VejetaryenSelect" name="VejetaryenSelect">
+        <label for="vejetaryen">*Vejetaryen Yemek Seçiniz:</label>
+        <select id="VejetaryenSelect" name="VejetaryenSelect" >
           <option value="" disabled selected>- Seçiniz -</option>
           <?php
           require "dbconfig.php";
@@ -103,7 +103,7 @@
       </div>
 
       <label for="corba">Çorba Seçiniz:</label>
-      <select id="corba" name="corba">
+      <select id="corba" name="corba" required>
         <option value="" disabled selected>- Seçiniz -</option>
         <?php
         require "dbconfig.php";
@@ -121,7 +121,7 @@
       </select>
 
       <label for="pilavAraSicak">Pilav veya Ara Sıcak Seçiniz:</label>
-      <select id="pilavAraSicak" name="pilavAraSicak">
+      <select id="pilavAraSicak" name="pilavAraSicak" required>
         <option value="" disabled selected>- Seçiniz -</option>
         <?php
         require "dbconfig.php";
@@ -140,7 +140,7 @@
       </select>
 
       <label for="tatliMeyveSalata">Tatlı, Meyve veya Salata Seçiniz:</label>
-      <select id="tatliMeyveSalata" name="tatliMeyveSalata">
+      <select id="tatliMeyveSalata" name="tatliMeyveSalata" required>
         <option value="" disabled selected>- Seçiniz -</option>
         <?php
         require "dbconfig.php";
@@ -158,7 +158,7 @@
       </select>
       <div class="form-group">
         <label for="selectedDate">Tarih Seçiniz:</label><br />
-        <input class="labelbox" type="text" name="selectedDate" id="selectedDate" placeholder="Tarih Seçiniz" />
+        <input class="labelbox" type="text" name="selectedDate " id="selectedDate" placeholder="Tarih Seçiniz" required/>
         <button> Submit</button>
 
       </div>
@@ -166,8 +166,11 @@
 
     </form>
   </div>
+  </div>
+  <?php include 'takvim.php' ?>
 
   </div>
+  
 
   <script src="index.js"></script>
 </body>
