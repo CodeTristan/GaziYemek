@@ -19,24 +19,8 @@
 <body>
   <?php include 'header.php' ?>
 
-    <div class="sub-menu-wrap" id="subMenu">
-      <div class="sub-menu">
-        <div class="user-info">
-          <img src="images/profile.png" class="user-pic" />
-          <h2>Mehmet Furkan Utlu</h2>
-        </div>
-        <hr />
-        <a href="#" class="sub-menu-link">
-          <img src="images/profile.png" width="100px" height="70px" />
-          <p>profili düzenle</p>
-          <span>></span>
-        </a>
-        <a href="#" class="sub-menu-link">
-          <img src="images/logout.png" width="100px" height="50px" />
-          <p>Çıkış yap</p>
-          <span>></span>
-        </a>
-      </div>
+  <div class="label">
+      <p>ADMİN</p>
     </div>
 
     <div class="Form">

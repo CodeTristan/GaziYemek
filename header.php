@@ -33,9 +33,7 @@
         </ul>
       </nav>
     </div>
-    <div class="label">
-      <p>ADMİN</p>
-    </div>
+    
 
     <div class="sub-menu-wrap" id="subMenu">
       <div class="sub-menu">
