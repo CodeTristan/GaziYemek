@@ -147,6 +147,10 @@
           $imageURL = 'images/' . $row["Food_Type"] . '/' . $row["File_name"];
           $name = $row["Name"];
           $calori = $row["Calorie"];
+          for ($i = strlen($name); $i <= 35; $i++) 
+          {
+               $name = $name . " ";
+          }
       ?>
           <div class="rating">
             <img src="<?php echo $imageURL ?>" class="rating-image">
