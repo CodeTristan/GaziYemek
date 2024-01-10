@@ -1,4 +1,14 @@
-<div class="adminPanel">
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="header.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="adminPanel">
     <div class="header">
       <nav>
         <ul class="sidebar">
@@ -14,7 +24,7 @@
           <li><a href="#">Giriş Yap</a></li>
         </ul>
         <ul>
-          <li><a href="#">Gazi Yemekhane</a></li>
+          <li><a href="index.php">Gazi Yemekhane</a></li>
           <li class="hideOnMobile">
             <a href="adminPaneli.php">Admin paneli</a>
           </li>
@@ -54,3 +64,5 @@
         </a>
       </div>
     </div>
+</body>
+</html>

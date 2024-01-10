@@ -15,39 +15,9 @@
 </head>
 
 <body>
-
+<?php include 'header.php' ?>
   <div class="wrapper-calendar">
-    <div class="header">
-      <nav class="sidebar-nav">
-        <ul class="sidebar">
-          <li onclick="hideSidebar()">
-            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
-              </svg></a>
-          </li>
-          <li><a href="adminPaneli.php">Günün Yemeği</a></li>
-          <li><a href="#">Duyurular</a></li>
-          <li><a href="#">Aylık Yemek Liste</a></li>
-          <li><a href="#">Forum</a></li>
-          <li><a href="#">İletişim</a></li>
-          <li><a href="#">Giriş Yap</a></li>
-        </ul>
-        <ul>
-          <li><a href="#">Gazi Yemekhane</a></li>
-          <li class="hideOnMobile"><a href="adminPaneli.php">Günün Yemeği</a></li>
-          <li class="hideOnMobile"><a href="#">Duyurular</a></li>
-          <li class="hideOnMobile"><a href="#">Aylık Yemek Liste</a></li>
-          <li class="hideOnMobile"><a href="#">Forum</a></li>
-          <li class="hideOnMobile"><a href="#">İletişim</a></li>
-          <li class="hideOnMobile"><a href="login.php">Giriş Yap</a></li>
-          <li class="menu-button" onclick="showSidebar()">
-            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-              </svg></a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+  
 
     <!---------------- SLIDER --------------->
     <div id="myCarousel" style="padding-bottom:10%; justify-content:center; align-items:center;" class="carousel slide" data-bs-ride="carousel" carousel-fade>
