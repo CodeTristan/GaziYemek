@@ -1,6 +1,6 @@
 /*--------------------SIDEBAR-------------------------*/
 nav {
-  background-color: powderblue !important;
+  background-color: rgba(16, 57, 113, 255);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   border-bottom: 2px solid black;
 }
@@ -20,13 +20,16 @@ nav a {
   text-decoration: none;
   display: flex;
   align-items: center;
-  color: black;
+  color: white;
 }
 nav a:hover {
   background-color: #f0f0f0;
 }
 nav li:first-child {
   margin-right: auto;
+}
+.header {
+  width: 100%;
 }
 .sidebar {
   position: fixed;
@@ -53,7 +56,7 @@ nav li:first-child {
   display: none;
 }
 .sub-menu-wrap {
-  margin-top: 0px;
+  margin-top: -2px;
   position: absolute;
   right: 0;
   width: 250px;

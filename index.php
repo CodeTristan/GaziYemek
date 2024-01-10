@@ -106,7 +106,10 @@
 
     
     <form action="rating.php" method="post">
-      <h3>Günün Yemeğini Puanla!</h3>
+      
+      <div class="textg">
+    <p>Günün Yemeğini Puanla!</p>
+  </div>
         <?php
         require 'dbConfig.php';
         $today = date("Y-m-d");
