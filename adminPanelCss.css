@@ -61,12 +61,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 40px;
   font-size: 40px;
 }
 
 .meal-list {
-  margin: 0px 0px 0px 20px;
+  margin: 0px 0px 0px 0px;
   border: 1px solid black;
   width: 35%;
   padding: 30px;
@@ -80,8 +79,8 @@ select {
 }
 .takvimharic {
   display: flex;
+  flex-wrap: wrap;
 }
-
 .labelbox {
   width: 50%;
 }

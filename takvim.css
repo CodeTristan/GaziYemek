@@ -13,8 +13,8 @@ td {
   display: flex;
   flex-wrap: wrap;
   border: 1px solid black !important;
-  width: 1352px;
-  margin-left: 300px;
+  width: 70%;
+  margin-left: 16%;
 }
 
 .box-takvim {
