@@ -68,6 +68,30 @@ body {
     font-size: 20px;
 }
 
+.error-msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    display: block;
+    background: crimson;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.success-msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    display: block;
+    background: green;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
 i {
     font-weight: 400;
     font-size: 15px;

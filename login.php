@@ -21,8 +21,12 @@
             </div>
             <div class="box signin">
                 <div class="input-box">
-                    <form action="" method="post" id="signinform" onkeydown="if(event.keyCode === 13) { return false;}">
+                    <form action="loginForm.php" method="post" id="signinform" onkeydown="if(event.keyCode === 13) { return false;}">
                         <header>Sign in</header>
+                        <?php
+                            if(isset($_GET['error'])){ ?>
+                                <div class="error-msg"><?php echo $_GET['error'];?></div>
+                        <?php  } ?>
                         <div class="input-field">
                             <input type="text" class="input" id="email" name="email" required="">
                             <label for="email">Email</label>
@@ -44,9 +48,18 @@
             <div class="box signup">
 
                 <div class="input-box">
-                    <form action="" method="post" id="signupform" onkeydown="if(event.keyCode === 13) { return false;}">
+                    <form action="signupForm.php" method="post" id="signupform" onkeydown="if(event.keyCode === 13) { return false;}">
 
                         <header>Sign up</header>
+                        <?php
+                            if(isset($_GET['success'])){ ?>
+                                <div class="success-msg"><?php echo $_GET['success'];?></div>
+                        <?php  } ?>
+                        <?php
+                            if(isset($_GET['errorsu'])){ ?>
+                                <div class="error-msg"><?php echo $_GET['errorsu'];?></div>
+                        <?php  } ?>
+                        
                         
                         <div class="input-field">
                             <input type="text" class="input" id="email" name="email" required="">
@@ -78,6 +91,7 @@
         </div>
     </div>
     <script>
+
         const signinbtn = document.querySelector('.signinbutton');
         const signupbtn = document.querySelector('.signupbutton');
 
@@ -85,6 +99,16 @@
         const signup = document.querySelector('.signup');
 
         const bar = document.querySelector('.side-image');
+
+        const queryString = window.location.search;
+        
+        const urlParams = new URLSearchParams(queryString);
+
+        if(urlParams.has('errorsu') || urlParams.has('success')){
+            bar.classList.add('active');
+            signin.classList.add('active');
+            signup.classList.add('active');
+        }
 
         signupbtn.onclick = function() {
             bar.classList.add('active');
