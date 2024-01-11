@@ -36,8 +36,16 @@ nav {
 
 /*---------Slider---------*/
 
+.carousel  {
+  height: 600px;
+}
+
+.carousel-inner{
+  height: 500px;
+}
+
 .carousel-item {
-  height: 30rem;
+  height: 500px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -48,7 +56,7 @@ nav {
   position: absolute;
   width: 100%;
   display: flex;
-  background-size: contain;
+  background-size: 60vh 40vh;
   background-position: center;
   background-repeat: no-repeat;
   bottom: 0;
@@ -69,8 +77,8 @@ nav {
   transform: translateX(-50%);
   text-align: center;
   left: 50%;
-  bottom: 460px;
-  color: red;
+  bottom: 440px;
+  font-size: 2.4vh;
 }
 
 /*--------Rating-----------*/
@@ -78,8 +86,8 @@ nav {
 /* ---------------------- Duyuru --------------------------- */
 #duyuru-slider {
   position: relative;
-  width: 500px;
-  height: 200px;
+  width: 100%;
+  height: 400px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -93,10 +101,10 @@ nav {
 
 .duyuru img {
   position: relative;
+  width: 100%;
+  height: 100%;
 
-  width: 500px;
-
-  object-fit: cover;
+  object-fit: contain;
 }
 
 #dots-container {
@@ -115,6 +123,7 @@ nav {
 }
 
 .textg {
+  border-top: 1px solid rgba(16, 57, 113, 255);
   text-align: center;
   font-size: 35px;
 }

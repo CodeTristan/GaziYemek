@@ -44,7 +44,7 @@
           $imageURL = 'images/' . $row["Food_Type"] . '/' . $row["File_name"];
           $name = $row["Name"];
       ?>
-          <li id="<?php echo $slideID ?>" style="border: 1px solid black; margin-left: 2.5%; background-image: url('<?php echo $imageURL ?>');height:10vh; width: 10vh; background-position: center;background-size: contain;background-repeat: no-repeat;" data-bs-target="#myCarousel" data-bs-slide-to="<?php echo $slide ?>" class="<?php echo $active ?>">
+          <li id="<?php echo $slideID ?>" style="border: 0.5px solid black; margin-left: 2.5%; background-image: url('<?php echo $imageURL ?>');height:10vh; width: 10vh; background-position: center;background-size: contain;background-repeat: no-repeat;" data-bs-target="#myCarousel" data-bs-slide-to="<?php echo $slide ?>" class="<?php echo $active ?>">
           </li>
       <?php
           $slide++;
@@ -74,8 +74,8 @@
           $name = $row["Name"];
           $calori = $row["Calorie"];
       ?>
-
-          <div class="carousel-item <?php echo $activeSlide ?>">
+          
+          <div class="carousel-item <?php echo $activeSlide ?>" >
             <div class="overlay-image" style="background-image:url('<?php echo $imageURL ?>');">
               <div class="content">
                 <h6><br><?php echo $name ?><br>Kalori:<?php echo $calori ?></h6>

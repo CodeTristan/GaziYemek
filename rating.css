@@ -2,10 +2,6 @@
   border-top: 1px solid rgba(16, 57, 113, 255);
 }
 
-.rating-wrapper {
-  margin-top: 1px solid rgba(16, 57, 113, 255);
-}
-
 /* Updated styling for images */
 
 .rating-stars {
@@ -41,16 +37,13 @@
   color: #ffcc00; /* Altın rengi */
 }
 
-.border-rating {
-  width: 100%;
-  border-top: 1px solid rgba(16, 57, 113, 255);
-}
 
 .rating-submit {
   width: 20%;
   background-color: rgba(16, 57, 113, 255);
   color: white;
   margin-left: 40%;
+  margin-bottom:1.5%;
 }
 
 .float-container {
