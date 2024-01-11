@@ -40,12 +40,10 @@ $today = date("Y-m-d");
 $menuID = $db->query("SELECT ID from menu where Date = '$today'")->fetch_assoc()["ID"];
 foreach ($ratings as $rating) 
 {
-    $db->query("INSERT INTO vote (ID,Overall_Vote) Values (null,$rating)");
-    $voteID = $db->query("SELECT vote.ID from user_has_vote 
-                        inner join vote on user_has_vote.Vote_ID = vote.ID
-                        where User_ID = '$userID' and vote.Overall_Vote = '$rating'")->fetch_assoc()["ID"];
+    $voteID = $db->query("SELECT vote.ID from vote 
+                        where vote.Overall_Vote = '$rating'")->fetch_assoc()["ID"];
 
-    echo 
+    echo "Vote ID: " . $voteID . " Menü ID: " . $menuID;
     $db->query("INSERT INTO user_has_vote (ID,Vote_ID,User_ID) Values (null,'$voteID','$userID')");
     
     $db->query("INSERT INTO score (ID,Vote_ID,Menu_ID) Values (null,'$voteID','$menuID')");
