@@ -93,11 +93,6 @@ select {
     display: none;
   }
 }
-@media screen and (max-width: 1000px) {
-  .wrapper .carousel {
-    grid-auto-columns: 100%;
-  }
-}
 
 @media (max-width: 500px) {
   .sidebar {

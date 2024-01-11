@@ -69,6 +69,8 @@ nav {
   transform: translateX(-50%);
   text-align: center;
   left: 50%;
+  bottom: 460px;
+  color: red;
 }
 
 /*--------Rating-----------*/

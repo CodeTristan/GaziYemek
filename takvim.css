@@ -23,3 +23,11 @@ td {
 
   border: 0.5px solid black !important;
 }
+@media (max-width: 600px) {
+  .box-takvim {
+    width: 100%;
+  }
+  .takvimharic {
+    height: 10%;
+  }
+}
