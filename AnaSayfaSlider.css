@@ -23,6 +23,17 @@ nav {
   top: 51px;
 }
 
+/* ----------Carousel---------------- */
+
+.carousel-inner a {
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 30px;
+  height: 30px;
+  width: 30px;
+  top: 50%;
+  margin: 0 2.5% 0 2.5%;
+}
+
 /*---------Slider---------*/
 
 .carousel-item {
@@ -61,8 +72,6 @@ nav {
 }
 
 /*--------Rating-----------*/
-
-
 
 /* ---------------------- Duyuru --------------------------- */
 #duyuru-slider {

@@ -77,6 +77,7 @@ nav li:first-child {
   background: #fff;
   padding: 10px;
   margin: 7px;
+  color: blue !important;
 }
 .user-info {
   display: flex;
@@ -104,6 +105,7 @@ nav li:first-child {
   align-items: center;
   text-decoration: none;
   margin: 10px 0;
+  color: blue;
 }
 .sub-menu-link p {
   width: 50%;
