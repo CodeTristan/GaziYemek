@@ -128,6 +128,9 @@ nav li:first-child {
 .header {
   width: 100%;
 }
+.sidebars li #admingiris {
+  display: none;
+}
 @media screen and (max-width: 1000px) {
   .sidebar {
     display: none;

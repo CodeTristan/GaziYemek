@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="takvim.css">
+  <link rel="stylesheet" href="takvim1.css">
 </head>
 
 <body>
-  <div class="takvim">
+  <div class="takvim" id="takvim">
     <?php
     require "dbConfig.php";
     date_default_timezone_set('Europe/Istanbul');

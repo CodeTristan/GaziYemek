@@ -17,9 +17,9 @@
                 <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
               </svg></a>
           </li>
-          <li><a href="adminPaneli.php">Admin paneli</a></li>
-          <li><a href="#duyuru-slider">Duyurular</a></li>
-          <li><a href="#">Aylık Yemek Liste</a></li>
+          <li id="admingiris"><a href="adminPaneli.php">Admin paneli</a></li>
+          <li id="admingiris"><a href="#duyuru-slider">Duyurular</a></li>
+          <li><a href="#takvim">Yemek Takvimi</a></li>
          
           <li><a href="login.php">Giriş Yap</a></li>
         </ul>
@@ -29,14 +29,14 @@
           <li style="display: flex;">
           <img src="images/logo.png" style="width: 50px;margin-left:30px""> <a href="index.php">Gazi Yemekhane</a>
           </li>
-          <li class="hideOnMobile">
+          <li id="admin" class="hideOnMobile">
             <a href="adminPaneli.php">Admin paneli</a>
           </li>
 
-          <li class="hideOnMobile"><a href="#duyuru-slider">Duyurular</a></li>
-          <li class="hideOnMobile"><a href="#">Aylık Yemek Liste</a></li>
+          <li id="admin" class="hideOnMobile"><a href="#duyuru-slider">Duyurular</a></li>
+          <li class="hideOnMobile"><a href="#takvim">Yemek Takvimi</a></li>
           
-          <li class="hideOnMobile"><a href="login.php">Giriş Yap</a></li>
+          <li id="admin" class="hideOnMobile"><a href="login.php">Giriş Yap</a></li>
           <li class="hideOnMobile"> <img src="images/profile.png" class="user-pic" height="50px" onclick="toggleMenu()" /></li>
 
           <li class="menu-button" onclick="showSidebar()">
