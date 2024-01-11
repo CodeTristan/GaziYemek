@@ -34,7 +34,7 @@ if(isset($_COOKIE['token'])){
             <li id="admingiris"><a href="adminPaneli.php">Admin paneli</a></li>
           <?php }?>
           <li id="admingiris"><a href="#duyuru-slider">Duyurular</a></li>
-          <li><a href="#takvim">Yemek Takvimi</a></li>
+          <li><a href="#takvim1">Yemek Takvimi</a></li>
          
           
         </ul>
@@ -50,7 +50,7 @@ if(isset($_COOKIE['token'])){
           </li>
           <?php }?>
           <li id="admin" class="hideOnMobile"><a href="#duyuru-slider">Duyurular</a></li>
-          <li class="hideOnMobile"><a href="#takvim">Yemek Takvimi</a></li>
+          <li class="hideOnMobile"><a href="#takvim1">Yemek Takvimi</a></li>
           
           <li class="hideOnMobile"> <img src="images/profile.png" class="user-pic" height="50px" onclick="toggleMenu()" /></li>
 

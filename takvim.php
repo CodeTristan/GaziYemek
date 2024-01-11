@@ -9,8 +9,8 @@
 </head>
 
 <body>
-<div class="textg">
-    <p>Takvim</p>
+<div class="textg" id="takvim1">
+    <p>Yemek Takvimi</p>
   </div>
   <div class="takvim" id="takvim">
     <?php
