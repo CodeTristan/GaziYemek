@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2024 at 03:53 PM
+-- Generation Time: Jan 11, 2024 at 04:16 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -161,7 +161,7 @@ CREATE TABLE `user` (
   `ID` int(11) NOT NULL,
   `UserName` varchar(60) NOT NULL,
   `Mail` varchar(60) NOT NULL,
-  `UserPassword` varchar(45) NOT NULL,
+  `UserPassword` varchar(60) NOT NULL,
   `Comment_ID` int(11) DEFAULT NULL,
   `Vote_ID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -171,9 +171,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `UserName`, `Mail`, `UserPassword`, `Comment_ID`, `Vote_ID`) VALUES
-(1, 'Citris', 'eren@gmail.com', '313131', 1, 1),
-(2, 'eren', '5aerenmertozen@gmail.com', '$2y$10$wr0aCAIOiKYwU6zsv0TnVu1T.Y3Nle4GIz04AR', NULL, NULL),
-(3, 'Eren Mert', 'nohacker112@gmail.com', '$2y$10$yHcYG12TkGzcCv/b88BnW.TcGjFXx0M7IDJh0c', NULL, NULL);
+(6, 'za', 'za', '$2y$10$RjETFwwjV89LGlsN2cHHmeyfs81ogQK/61wjvrkOLEVstRpfwIHUG', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -286,7 +284,7 @@ ALTER TABLE `score`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `vote`
