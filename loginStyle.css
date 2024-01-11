@@ -78,7 +78,7 @@ body {
     background: crimson;
     color: #fff;
     border-radius: 5px;
-    font-size: 10px;
+    font-size: 20px;
 }
 
 .success-msg {
@@ -91,7 +91,7 @@ body {
     background: green;
     color: #fff;
     border-radius: 5px;
-    font-size: 10px;
+    font-size: 20px;
 }
 
 i {

@@ -23,6 +23,10 @@
                     <form action="loginForm.php" method="post" id="signinform" onkeydown="if(event.keyCode === 13) { return false;}">
                         <header>Sign in</header>
                         <?php
+                            if(isset($_GET['success'])){ ?>
+                                <div class="success-msg"><?php echo $_GET['success'];?></div>
+                        <?php  } ?>
+                        <?php
                             if(isset($_GET['error'])){ ?>
                                 <div class="error-msg"><?php echo $_GET['error'];?></div>
                         <?php  } ?>
@@ -31,7 +35,7 @@
                             <label for="email">Email</label>
                         </div>
                         <div class="input-field">
-                            <input type="password" class="input" id="pass" name="password" required="">
+                            <input type="password" class="input" id="password" name="password" required="">
                             <label for="pass">Password</label>
                         </div>
                         <div class="input-field">
@@ -50,10 +54,7 @@
                     <form action="signupForm.php" method="post" id="signupform" onkeydown="if(event.keyCode === 13) { return false;}">
 
                         <header>Sign up</header>
-                        <?php
-                            if(isset($_GET['success'])){ ?>
-                                <div class="success-msg"><?php echo $_GET['success'];?></div>
-                        <?php  } ?>
+                        
                         <?php
                             if(isset($_GET['errorsu'])){ ?>
                                 <div class="error-msg"><?php echo $_GET['errorsu'];?></div>
