@@ -21,7 +21,7 @@
             <div class="box signin">
                 <div class="input-box">
                     <form action="loginForm.php" method="post" id="signinform" onkeydown="if(event.keyCode === 13) { return false;}">
-                        <header>Sign in</header>
+                        <header>Giriş Yap</header>
                         <?php
                             if(isset($_GET['success'])){ ?>
                                 <div class="success-msg"><?php echo $_GET['success'];?></div>
@@ -32,17 +32,18 @@
                         <?php  } ?>
                         <div class="input-field">
                             <input type="text" class="input" id="email" name="email" required="">
-                            <label for="email">Email</label>
+                            <label for="email">E-Posta</label>
                         </div>
                         <div class="input-field">
                             <input type="password" class="input" id="password" name="password" required="">
-                            <label for="pass">Password</label>
+                            <label for="pass">Şifre</label>
                         </div>
                         <div class="input-field">
-                            <input type="submit" class="submit" value="Sign In">
+                            <input type="submit" class="submit" value="Giriş Yap">
                         </div>
                         <div class="signintext">
-                            <span>Already have an account? <button class="signupbutton" type="button">Sign up here</button></span>
+                            <span>Hesabın yok mu? <button class="signupbutton" type="button">Hesap oluştur</button></span><br><br>
+                            <a href="index.php"class="anonymbutton">Anonim giriş yap</a>
                         </div>
                     </form>
                 </div>
@@ -53,7 +54,7 @@
                 <div class="input-box">
                     <form action="signupForm.php" method="post" id="signupform" onkeydown="if(event.keyCode === 13) { return false;}">
 
-                        <header>Sign up</header>
+                        <header>Hesap Oluştur</header>
                         
                         <?php
                             if(isset($_GET['errorsu'])){ ?>
@@ -61,26 +62,27 @@
                         <?php  } ?>
                         <div class="input-field">
                             <input type="text" class="input" id="emailu" name="email" required="">
-                            <label for="email">Email</label>
+                            <label for="email">E-Posta</label>
                         </div>
                         <div class="input-field">
                             <input type="text" class="input" id="nameu" name="name" required="" autocomplete="off">
-                            <label for="pass">Name Surname</label>
+                            <label for="pass">Ad Soyad</label>
                         </div>
 
                         <div class="input-field">
                             <input type="password" class="input" id="passu" name="password" required="" autocomplete="off">
-                            <label for="pass">Password</label>
+                            <label for="pass">Şifre</label>
                         </div>
                         <div class="input-field">
                             <input type="password" class="input" id="passcu" name="cpassword" required="" autocomplete="off">
-                            <label for="pass">Confirm Password</label>
+                            <label for="pass">Şifreyi tekrar yaz</label>
                         </div>
                         <div class="input-field">
-                            <input type="submit" class="submit" value="Sign Up">
+                            <input type="submit" class="submit" value="Hesap Oluştur">
                         </div>
                         <div class="signintext">
-                            <span>Already have an account? <button class="signinbutton" type="button">Sign in here</button></span>
+                            <span>Hesabın var mı? <button class="signinbutton" type="button">Giriş yap</button></span><br><br>
+                            <a href="index.php"class="anonymbutton">Anonim giriş yap</a>
                         </div>
 
                     </form>

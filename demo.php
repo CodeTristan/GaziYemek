@@ -10,7 +10,7 @@ $jwtkey = '70f98e89f063c9ed5f4dd3f1aeb699792b301ebbafa217fab19049b21e174d597f75f
 if(isset($_COOKIE['token'])){
     $decoded = JWT::decode($_COOKIE['token'], new Key($jwtkey, 'HS256'));
 }else{
-    header('location:index.php');
+    header('location:login.php');
 }
 
 

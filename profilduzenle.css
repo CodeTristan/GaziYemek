@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 body {
   display: flex;
   padding: 0;
@@ -17,11 +18,38 @@ body {
   font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow-y: auto;
 }
+
 .profile-container {
   padding: 20px;
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0;
+  display: block;
+  background: crimson;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.success-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0;
+  display: block;
+  background: green;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 h1 {

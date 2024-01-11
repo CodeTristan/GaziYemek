@@ -94,9 +94,13 @@ body {
     font-size: 20px;
 }
 
-i {
-    font-weight: 400;
-    font-size: 15px;
+a {
+    text-decoration: none;
+}
+
+.anonymbutton {
+    text-decoration: none;
+    color: cornflowerblue;
 }
 
 .signup {
