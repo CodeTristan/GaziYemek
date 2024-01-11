@@ -19,7 +19,15 @@
 
 
   <div class="textg" style="background:transparent;">
-    <p>20.12.2023 Çarşamba</p>
+  <?php
+    date_default_timezone_set('Europe/Istanbul');
+    $today = date("Y-m-d");
+
+    $days = array('Pazartesi','Salı','Çarşamba','Perşembe','Cuma');
+    $dayofweek = date('w', strtotime($today));
+    $tarih = date('d.m.Y', strtotime($today));
+  ?>
+    <p><?php echo $tarih . " " . $days[$dayofweek - 1]?></p>
   </div>
   <!---------------- SLIDER --------------->
   <div id="myCarousel" style="padding-bottom:10%; justify-content:center; align-items:center;" class="carousel slide" data-bs-ride="carousel" carousel-fade>
@@ -58,6 +66,7 @@
 
       <?php
       require 'dbConfig.php';
+      
       $today = date("Y-m-d");
       $query = $db->query("SELECT food.Name, food.Calorie, Food.File_name, menu.Date,food.Food_Type
                         from food_has_menu 
