@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2024 at 03:00 PM
+-- Generation Time: Jan 11, 2024 at 03:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -104,7 +104,12 @@ INSERT INTO `food_has_menu` (`ID`, `Food_ID`, `Menu_ID`) VALUES
 (38, 18, 30),
 (39, 9, 30),
 (40, 15, 30),
-(41, 6, 30);
+(41, 6, 30),
+(42, 2, 31),
+(43, 18, 31),
+(44, 9, 31),
+(45, 17, 31),
+(46, 8, 31);
 
 -- --------------------------------------------------------
 
@@ -124,7 +129,8 @@ CREATE TABLE `menu` (
 INSERT INTO `menu` (`ID`, `Date`) VALUES
 (1, '2024-01-09'),
 (2, '2024-01-12'),
-(30, '2024-01-10');
+(30, '2024-01-10'),
+(31, '2024-01-11');
 
 -- --------------------------------------------------------
 
@@ -155,7 +161,7 @@ CREATE TABLE `user` (
   `ID` int(11) NOT NULL,
   `UserName` varchar(60) NOT NULL,
   `Mail` varchar(60) NOT NULL,
-  `Password` varchar(45) NOT NULL,
+  `UserPassword` varchar(45) NOT NULL,
   `Comment_ID` int(11) DEFAULT NULL,
   `Vote_ID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -164,8 +170,10 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`ID`, `UserName`, `Mail`, `Password`, `Comment_ID`, `Vote_ID`) VALUES
-(1, 'Citris', 'eren@gmail.com', '313131', 1, 1);
+INSERT INTO `user` (`ID`, `UserName`, `Mail`, `UserPassword`, `Comment_ID`, `Vote_ID`) VALUES
+(1, 'Citris', 'eren@gmail.com', '313131', 1, 1),
+(2, 'eren', '5aerenmertozen@gmail.com', '$2y$10$wr0aCAIOiKYwU6zsv0TnVu1T.Y3Nle4GIz04AR', NULL, NULL),
+(3, 'Eren Mert', 'nohacker112@gmail.com', '$2y$10$yHcYG12TkGzcCv/b88BnW.TcGjFXx0M7IDJh0c', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -260,13 +268,13 @@ ALTER TABLE `food`
 -- AUTO_INCREMENT for table `food_has_menu`
 --
 ALTER TABLE `food_has_menu`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `score`
@@ -278,7 +286,7 @@ ALTER TABLE `score`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `vote`
