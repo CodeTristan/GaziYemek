@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <script src="index.js" defer></script>
 </head>
@@ -76,7 +76,7 @@
       ?>
 
           <div class="carousel-item <?php echo $activeSlide ?>">
-            <div class="overlay-image" style="background-image:url('<?php echo $imageURL ?>')">
+            <div class="overlay-image" style="background-image:url('<?php echo $imageURL ?>');">
               <div class="content">
                 <h6><br><?php echo $name ?><br>Kalori:<?php echo $calori ?></h6>
               </div>
@@ -102,58 +102,7 @@
   ?>
   </div>
 
-  <div id="Yemekpuan" class="rating-wrapper">
-    <form action="rating.php" method="post">
-    <div class="textg">
-    <p>Günün yemeğini puanla!</p>
-    </div>
-        <?php
-        require 'dbConfig.php';
-        $today = date("Y-m-d");
-        $query = $db->query("SELECT food.Name, food.Calorie, Food.File_name, menu.Date,food.Food_Type
-                        from food_has_menu 
-                        inner join food on food_has_menu.Food_ID = food.ID
-                        inner join menu on food_has_menu.Menu_ID = menu.ID
-                        Where menu.date = '$today'");
-
-        if ($query->num_rows > 0) {
-          $id = 1;
-          while ($row = $query->fetch_assoc()) {
-
-            $imageURL = 'images/' . $row["Food_Type"] . '/' . $row["File_name"];
-            $name = $row["Name"];
-            $calori = $row["Calorie"];
-        ?>
-            <div class="rating-container">
-              <img src="<?php echo $imageURL ?>" class="rating-image">
-              <h3><?php echo $name ?></h3>
-              
-              <div class="rating" id="rating<?php echo $id ?>">
-                <input type="radio" name="rating<?php echo $id ?>" id="star1_<?php echo $id ?>" value="1">
-                <label for="star1_<?php echo $id ?>"></label>
-                <input type="radio" name="rating<?php echo $id ?>" id="star2_<?php echo $id ?>" value="2">
-                <label for="star2_<?php echo $id ?>"></label>
-                <input type="radio" name="rating<?php echo $id ?>" id="star3_<?php echo $id ?>" value="3">
-                <label for="star3_<?php echo $id ?>"></label>
-                <input type="radio" name="rating<?php echo $id ?>" id="star4_<?php echo $id ?>" value="4">
-                <label for="star4_<?php echo $id ?>"></label>
-                <input type="radio" name="rating<?php echo $id ?>" id="star5_<?php echo $id ?>" value="5">
-                <label for="star5_<?php echo $id ?>"></label>
-              </div>
-            </div>
-          <?php
-            $id++;
-          }
-          ?>
-        <?php
-  
-        }
-        ?>
-        <input class="rating-submit" type="submit" value="Gönder">
-    </form>
-  </div>
-  
-
+  <?php include 'ratingImages.php' ?>
   <div class="textg">
     <p>Duyurular</p>
   </div>
