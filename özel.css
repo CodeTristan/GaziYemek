@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.item img {
+  width: 50px; /* Resim genişliğini ayarlayabilirsiniz */
+  height: auto;
+  margin-right: 10px; /* Resim ile metin arasındaki boşluğu ayarlayabilirsiniz */
+}
