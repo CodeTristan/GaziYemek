@@ -22,32 +22,62 @@ else
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $jsonString = $_POST['ratings'];
     $ratings = json_decode($jsonString, true);
-
     
     // Burada $ratings dizisini kullanabilirsiniz
     
 } else {
     echo 'Invalid request';
+    return;
 }
+function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
 
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}
 
 //Database'e bilgi gönderme
 require "dbConfig.php";
 
 $userID = $decoded->data->ID;
-$today = date("Y-m-d");
+$today = date("Y-m-d");     
 
 $menuID = $db->query("SELECT ID from menu where Date = '$today'")->fetch_assoc()["ID"];
+$foodID = $db->query("SELECT ID from food_has_menu
+                        where Menu_ID = '$menuID'")->fetch_all();
+
+print_r($foodID);
+$i = 0;
 foreach ($ratings as $rating) 
 {
-    $voteID = $db->query("SELECT vote.ID from vote 
-                        where vote.Overall_Vote = '$rating'")->fetch_assoc()["ID"];
+    $db->query("INSERT INTO vote (ID,Overall_Vote) values (null,'$rating')");
 
-    echo "Vote ID: " . $voteID . " Menü ID: " . $menuID;
-    $db->query("INSERT INTO user_has_vote (ID,Vote_ID,User_ID) Values (null,'$voteID','$userID')");
+    $voteIDs = $db->query("SELECT ID from vote 
+                        where Overall_Vote = '$rating'")->fetch_all();
     
-    $db->query("INSERT INTO score (ID,Vote_ID,Menu_ID) Values (null,'$voteID','$menuID')");
+    print_r($voteIDs);
+    $voteID = $voteIDs[count($voteIDs) -1][0];
+    $sql = ("INSERT INTO user_has_vote (ID,Vote_ID,User_ID) Values (null,'$voteID','$userID')");
+
+    if (mysqli_query($db, $sql)) {
+        echo "kullanıcıya vote başarıyla eklendi! <br>";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($db);
+    }
+    
+    $fID = $foodID[$i][0];
+    $sql = ("INSERT INTO score (ID,Vote_ID,food_ID) Values (null,'$voteID','$fID')");
+
+    if (mysqli_query($db, $sql)) {
+        echo "Score'a vote başarıyla eklendi! <br>";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($db);
+    }
 
     echo "Vote Added!";
+    $i++;
 }
+
+//close the voting screen
 ?>
