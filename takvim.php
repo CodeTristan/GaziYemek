@@ -37,9 +37,10 @@
         $row[$counter] = $query->fetch_assoc();
         $counter++;
       }
-      else if($query->num_rows <= 0 && $dayofweek <= 5)
+      else if($query->num_rows <= 0 && $dayofweek <= 5 && $dayofweek!=0)
       {
         $row[$counter]["Date"] = $day;
+        $counter++;
       }
 
     }
