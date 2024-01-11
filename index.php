@@ -146,12 +146,13 @@
           }
           ?>
         <?php
-
+  
         }
         ?>
+        <input class="rating-submit" type="submit" value="Gönder">
     </form>
   </div>
-  <input class="rating-submit" type="submit" value="Gönder">
+  
 
   <div class="textg">
     <p>Duyurular</p>
