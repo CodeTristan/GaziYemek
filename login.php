@@ -112,8 +112,8 @@
             bar.classList.add('active');
             signin.classList.add('active');
             signup.classList.add('active');
-            /*document.getElementById("email").value = '';
-            document.getElementById("pass").value = '';*/
+            document.getElementById("email").value = '';
+            document.getElementById("password").value = '';
 
 
         }
@@ -121,10 +121,10 @@
             bar.classList.remove('active');
             signin.classList.remove('active');
             signup.classList.remove('active');
-            /*document.getElementById("emailu").value = '';
+            document.getElementById("emailu").value = '';
             document.getElementById("passu").value = '';
             document.getElementById("nameu").value = '';
-            document.getElementById("passcu").value = '';*/
+            document.getElementById("passcu").value = '';
 
         }
     </script>
