@@ -1,0 +1,40 @@
+.footer {
+  bottom: 0;
+  top: 0%;
+}
+.footer .ustRenkKatmanı {
+  background-color: rgba(16, 57, 113, 255);
+  height: 80px;
+  width: 100%;
+  display: flex;
+}
+
+.footer .ustRenkKatmanı ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 15px;
+}
+.footer .ustRenkKatmanı li {
+  height: 50px;
+}
+.footer .rektorluk {
+  height: 155px;
+  width: 35%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-left: 35%;
+}
+.footer .altRenkKatmanı {
+  background-color: rgba(16, 57, 113, 255);
+  height: 80px;
+  width: 100%;
+  display: flex;
+  color: white;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

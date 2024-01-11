@@ -166,10 +166,10 @@
     </div>
   </div>
   <?php include 'takvim.php' ?>
-
+  <?php include "footer.php" ?>
   </div>
 
-
+  
   <script src="index.js"></script>
 </body>
 

@@ -23,8 +23,12 @@
          
           <li><a href="login.php">Giriş Yap</a></li>
         </ul>
+        
         <ul>
-          <li><a href="index.php">Gazi Yemekhane</a></li>
+          
+          <li style="display: flex;">
+          <img src="images/logo.png" style="width: 50px;margin-left:30px""> <a href="index.php">Gazi Yemekhane</a>
+          </li>
           <li class="hideOnMobile">
             <a href="adminPaneli.php">Admin paneli</a>
           </li>
