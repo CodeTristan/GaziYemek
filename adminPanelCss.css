@@ -75,7 +75,7 @@ select {
 .takvimharic {
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
+  height: 30%;
 }
 .labelbox {
   width: 50%;

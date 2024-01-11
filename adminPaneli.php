@@ -35,7 +35,7 @@ if(isset($_COOKIE['token'])){
 <body>
   <?php include 'header.php' ?>
 
-  <div class="label">
+  <div class="label1">
     <p>ADMİN</p>
   </div>
   <div class="takvimharic">
