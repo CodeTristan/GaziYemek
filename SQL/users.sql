@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Anamakine: 127.0.0.1
--- Üretim Zamanı: 11 Oca 2024, 20:21:43
--- Sunucu sürümü: 10.4.32-MariaDB
--- PHP Sürümü: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Jan 12, 2024 at 12:57 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Veritabanı: `users`
+-- Database: `users`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `comment`
+-- Table structure for table `comment`
 --
 
 CREATE TABLE `comment` (
@@ -34,17 +34,10 @@ CREATE TABLE `comment` (
   `Vote_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Tablo döküm verisi `comment`
---
-
-INSERT INTO `comment` (`ID`, `Header`, `Text`, `Vote_ID`) VALUES
-(1, 'Berbat', 'Yemek berbattı vallaha ama yorumum üstte olsun diye 5 yıldız', 1);
-
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `food`
+-- Table structure for table `food`
 --
 
 CREATE TABLE `food` (
@@ -59,7 +52,7 @@ CREATE TABLE `food` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Tablo döküm verisi `food`
+-- Dumping data for table `food`
 --
 
 INSERT INTO `food` (`ID`, `File_name`, `Name`, `Created`, `Modified`, `Calorie`, `IsVegetarian`, `Food_Type`) VALUES
@@ -146,7 +139,7 @@ INSERT INTO `food` (`ID`, `File_name`, `Name`, `Created`, `Modified`, `Calorie`,
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `food_has_menu`
+-- Table structure for table `food_has_menu`
 --
 
 CREATE TABLE `food_has_menu` (
@@ -156,7 +149,7 @@ CREATE TABLE `food_has_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Tablo döküm verisi `food_has_menu`
+-- Dumping data for table `food_has_menu`
 --
 
 INSERT INTO `food_has_menu` (`ID`, `Food_ID`, `Menu_ID`) VALUES
@@ -281,7 +274,7 @@ INSERT INTO `food_has_menu` (`ID`, `Food_ID`, `Menu_ID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `menu`
+-- Table structure for table `menu`
 --
 
 CREATE TABLE `menu` (
@@ -290,7 +283,7 @@ CREATE TABLE `menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Tablo döküm verisi `menu`
+-- Dumping data for table `menu`
 --
 
 INSERT INTO `menu` (`ID`, `Date`) VALUES
@@ -322,43 +315,73 @@ INSERT INTO `menu` (`ID`, `Date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `score`
+-- Table structure for table `score`
 --
 
 CREATE TABLE `score` (
   `ID` int(11) NOT NULL,
   `Vote_ID` int(11) NOT NULL,
-  `Menu_ID` int(11) NOT NULL
+  `food_ID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `score`
+--
+
+INSERT INTO `score` (`ID`, `Vote_ID`, `food_ID`) VALUES
+(45, 30, 88),
+(46, 31, 89),
+(47, 32, 90),
+(48, 33, 91),
+(49, 34, 92);
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
   `ID` int(11) NOT NULL,
   `UserName` varchar(60) NOT NULL,
   `Mail` varchar(60) NOT NULL,
-  `UserPassword` varchar(45) NOT NULL,
-  `Comment_ID` int(11) DEFAULT NULL,
-  `Vote_ID` int(11) DEFAULT NULL
+  `UserPassword` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Tablo döküm verisi `user`
+-- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`ID`, `UserName`, `Mail`, `UserPassword`, `Comment_ID`, `Vote_ID`) VALUES
-(1, 'Citris', 'eren@gmail.com', '313131', 1, 1),
-(2, 'eren', '5aerenmertozen@gmail.com', '$2y$10$wr0aCAIOiKYwU6zsv0TnVu1T.Y3Nle4GIz04AR', NULL, NULL),
-(3, 'Eren Mert', 'nohacker112@gmail.com', '$2y$10$yHcYG12TkGzcCv/b88BnW.TcGjFXx0M7IDJh0c', NULL, NULL);
+INSERT INTO `user` (`ID`, `UserName`, `Mail`, `UserPassword`) VALUES
+(5, 'admin', 'admin', '$2y$10$lmgR7qkfUHjErDr.7o11juMGltZy/fN720GM21fkhTa9Nlxs9WzJS');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `vote`
+-- Table structure for table `user_has_vote`
+--
+
+CREATE TABLE `user_has_vote` (
+  `ID` int(11) NOT NULL,
+  `Vote_ID` int(11) NOT NULL,
+  `User_ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_has_vote`
+--
+
+INSERT INTO `user_has_vote` (`ID`, `Vote_ID`, `User_ID`) VALUES
+(101, 30, 5),
+(102, 31, 5),
+(103, 32, 5),
+(104, 33, 5),
+(105, 34, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vote`
 --
 
 CREATE TABLE `vote` (
@@ -367,33 +390,35 @@ CREATE TABLE `vote` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Tablo döküm verisi `vote`
+-- Dumping data for table `vote`
 --
 
 INSERT INTO `vote` (`ID`, `Overall_Vote`) VALUES
-(1, 5),
-(2, 3),
-(3, 4);
+(30, 2),
+(31, 4),
+(32, 3),
+(33, 3),
+(34, 3);
 
 --
--- Dökümü yapılmış tablolar için indeksler
+-- Indexes for dumped tables
 --
 
 --
--- Tablo için indeksler `comment`
+-- Indexes for table `comment`
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `Vote_ID` (`Vote_ID`);
 
 --
--- Tablo için indeksler `food`
+-- Indexes for table `food`
 --
 ALTER TABLE `food`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Tablo için indeksler `food_has_menu`
+-- Indexes for table `food_has_menu`
 --
 ALTER TABLE `food_has_menu`
   ADD PRIMARY KEY (`ID`),
@@ -401,109 +426,121 @@ ALTER TABLE `food_has_menu`
   ADD KEY `Menu_ID` (`Menu_ID`);
 
 --
--- Tablo için indeksler `menu`
+-- Indexes for table `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Tablo için indeksler `score`
+-- Indexes for table `score`
 --
 ALTER TABLE `score`
   ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `Vote_ID` (`Vote_ID`),
-  ADD KEY `Menu_ID` (`Menu_ID`);
+  ADD KEY `fk_score_food` (`food_ID`);
 
 --
--- Tablo için indeksler `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `Vote_ID` (`Vote_ID`),
-  ADD KEY `Comment_ID` (`Comment_ID`);
+  ADD PRIMARY KEY (`ID`);
 
 --
--- Tablo için indeksler `vote`
+-- Indexes for table `user_has_vote`
+--
+ALTER TABLE `user_has_vote`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `Vote_ID` (`Vote_ID`),
+  ADD KEY `User_ID` (`User_ID`);
+
+--
+-- Indexes for table `vote`
 --
 ALTER TABLE `vote`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Tablo için AUTO_INCREMENT değeri `comment`
+-- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Tablo için AUTO_INCREMENT değeri `food`
+-- AUTO_INCREMENT for table `food`
 --
 ALTER TABLE `food`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
--- Tablo için AUTO_INCREMENT değeri `food_has_menu`
+-- AUTO_INCREMENT for table `food_has_menu`
 --
 ALTER TABLE `food_has_menu`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
 
 --
--- Tablo için AUTO_INCREMENT değeri `menu`
+-- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- Tablo için AUTO_INCREMENT değeri `score`
+-- AUTO_INCREMENT for table `score`
 --
 ALTER TABLE `score`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
--- Tablo için AUTO_INCREMENT değeri `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Tablo için AUTO_INCREMENT değeri `vote`
+-- AUTO_INCREMENT for table `user_has_vote`
+--
+ALTER TABLE `user_has_vote`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+
+--
+-- AUTO_INCREMENT for table `vote`
 --
 ALTER TABLE `vote`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- Dökümü yapılmış tablolar için kısıtlamalar
+-- Constraints for dumped tables
 --
 
 --
--- Tablo kısıtlamaları `comment`
+-- Constraints for table `comment`
 --
 ALTER TABLE `comment`
   ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`Vote_ID`) REFERENCES `vote` (`ID`);
 
 --
--- Tablo kısıtlamaları `food_has_menu`
+-- Constraints for table `food_has_menu`
 --
 ALTER TABLE `food_has_menu`
   ADD CONSTRAINT `food_has_menu_ibfk_1` FOREIGN KEY (`Food_ID`) REFERENCES `food` (`ID`),
   ADD CONSTRAINT `food_has_menu_ibfk_2` FOREIGN KEY (`Menu_ID`) REFERENCES `menu` (`ID`);
 
 --
--- Tablo kısıtlamaları `score`
+-- Constraints for table `score`
 --
 ALTER TABLE `score`
-  ADD CONSTRAINT `score_ibfk_1` FOREIGN KEY (`Vote_ID`) REFERENCES `vote` (`ID`),
-  ADD CONSTRAINT `score_ibfk_2` FOREIGN KEY (`Menu_ID`) REFERENCES `menu` (`ID`);
+  ADD CONSTRAINT `fk_score_food` FOREIGN KEY (`food_ID`) REFERENCES `food_has_menu` (`ID`),
+  ADD CONSTRAINT `score_ibfk_1` FOREIGN KEY (`Vote_ID`) REFERENCES `vote` (`ID`);
 
 --
--- Tablo kısıtlamaları `user`
+-- Constraints for table `user_has_vote`
 --
-ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`Vote_ID`) REFERENCES `vote` (`ID`),
-  ADD CONSTRAINT `user_ibfk_2` FOREIGN KEY (`Comment_ID`) REFERENCES `comment` (`ID`);
+ALTER TABLE `user_has_vote`
+  ADD CONSTRAINT `user_has_vote_ibfk_1` FOREIGN KEY (`Vote_ID`) REFERENCES `vote` (`ID`),
+  ADD CONSTRAINT `user_has_vote_ibfk_2` FOREIGN KEY (`User_ID`) REFERENCES `user` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
