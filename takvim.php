@@ -16,6 +16,9 @@
     $today = date("Y-m-d");
     $month = date('Y-m', strtotime($today));
     $counter = 0;
+    $days = array('Pazartesi','Salı','Çarşamba','Perşembe','Cuma');
+    
+
     $row = array();
 
     for ($i = 1; $i <= 31; $i++) {
@@ -36,11 +39,12 @@
     ?>
     <?php
       $newCounter = 0;
-
+    
       while ($newCounter < $counter) {
-
-
-
+        
+        $date = $row[$newCounter]["Date"];
+        $formattedDate = date("d.W.Y", strtotime($date));
+        $dayofweek = date('w', strtotime($date));
         ?>
     <div class="box-takvim">
       
@@ -48,7 +52,7 @@
           <thead>
             <tr>
               <th>
-                <?php echo $row[$newCounter]["Date"] ?> Pazartesi
+                <?php echo $formattedDate ." ". $days[$dayofweek - 1]?>
               </th>
             </tr>
           </thead>

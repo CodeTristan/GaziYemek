@@ -26,7 +26,7 @@
       <form action="adminPaneliAddingFood.php" method="post">
         <div class="form-group">
           <label for="mealName">Yemek İsmi</label><br />
-          <input class="labelbox" type="text" name="mealName " id="mealName" placeholder="Yemek İsmi" required />
+          <input class="labelbox" type="text" name="mealName" id="mealName" placeholder="Yemek İsmi" required />
         </div>
         <div class="form-group">
           <label for="mealType">Yemek türü giriniz</label><br />
@@ -58,8 +58,8 @@
 
         <img id="previewImage" alt="Yemek Resmi Görüntüsü" />
 
-        <button onclick="addMeal()">Ekle</button>
-        <button onclick="clearMeals()">Temizle</button>
+        <button type="submit" onclick="addMeal()">Ekle</button>
+        <button type="button" onclick="clearMeals()">Temizle</button>
 
       </form>
     </div>
@@ -156,7 +156,7 @@
         </select>
         <div class="form-group">
           <label for="selectedDate">Tarih Seçiniz:</label><br />
-          <input class="labelbox" type="text" name="selectedDate " id="selectedDate" placeholder="Tarih Seçiniz" required />
+          <input class="labelbox" type="text" name="selectedDate" id="selectedDate" placeholder="Tarih Seçiniz" required />
           <button> Submit</button>
 
         </div>
