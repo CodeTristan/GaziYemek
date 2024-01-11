@@ -34,16 +34,28 @@
                           Where menu.date = '$day'");
 
       if ($query->num_rows > 0) {
-        $row[$counter] = $query->fetch_assoc();
+
+        $row[$counter] = $query->fetch_all();
+
+        //print_r($row[$counter][0]);
+        //print "<br>";
         $counter++;
       }
       else if($query->num_rows <= 0 && $dayofweek <= 5 && $dayofweek!=0)
       {
-        $row[$counter]["Date"] = $day;
+        for ($j = 0; $j <= 3; $j++)
+        {
+          $row[$counter][$j][0] = "Bugün Yemek Yoktur.";
+          $row[$counter][$j][1] = 0;
+          $row[$counter][$j][2] = $day;
+        }
+        
         $counter++;
       }
 
+      
     }
+    
 
     ?>
     <?php
@@ -51,9 +63,26 @@
     
       while ($newCounter < $counter) {
         
-        $date = $row[$newCounter]["Date"];
+        $date = $row[$newCounter][0][2];
         $formattedDate = date("d.W.Y", strtotime($date));
         $dayofweek = date('w', strtotime($date));
+
+        
+        $anaYemek = $row[$newCounter][0];
+        $çorba = $row[$newCounter][1];
+        $pilav = $row[$newCounter][2];
+        $salata = $row[$newCounter][3];
+
+        $vejetaryen;
+        
+        if(count($row[$newCounter]) > 4)
+          $vejetaryen = $row[$newCounter][4];
+        else
+        {
+          $vejetaryen[0] = "";
+          $vejetaryen[1] = 0;
+        }
+
         ?>
     <div class="box-takvim">
       
@@ -67,19 +96,22 @@
           </thead>
           <tbody>
             <tr>
-              <td>EZOGELİN ÇORBASI</td>
+              <td><?php echo $çorba[0] ."<br>" . $çorba[1] . " Kalori" ?></td>
             </tr>
             <tr>
-              <td>ETSİZ ANTEP USULÜ PATATES</td>
+              <td><?php echo $anaYemek[0] ."<br>" . $anaYemek[1] . " Kalori" ?></td>
             </tr>
             <tr>
-              <td>PİRİNÇ PİLAVI</td>
+              <td><?php echo "*". $vejetaryen[0] ."<br>" . $vejetaryen[1] . " Kalori" ?></td>
             </tr>
             <tr>
-              <td>TURŞU</td>
+              <td><?php echo $pilav[0] ." <br>" . $pilav[1] . " Kalori" ?></td>
             </tr>
             <tr>
-              <td>Kalori:1050</td>
+              <td><?php echo $salata[0] ." <br>" . $salata[1] . " Kalori" ?></td>
+            </tr>
+            <tr>
+              <td style="color: red;"><?php echo "Toplam: " . $çorba[1] + $anaYemek[1] + $pilav[1] + $salata[1] . " Kalori" ?></td>
             </tr>
           </tbody>
         </table>
