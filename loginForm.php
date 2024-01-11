@@ -7,14 +7,24 @@ $jwtkey = '70f98e89f063c9ed5f4dd3f1aeb699792b301ebbafa217fab19049b21e174d597f75f
 $email = $_POST["email"];
 $password = $_POST["password"];
 
-if($email == "admin" && $password == "123"){
+$sql = "SELECT * FROM user WHERE Mail='admin'";
+
+$result = mysqli_query($db,$sql);
+
+$row = mysqli_fetch_array($result);
+$temp = $row['UserPassword'];
+
+if($email == "admin" && password_verify($password,$temp)){
     $token = JWT::encode(
         array(
             'iat'       =>  time(),
             'nbf'       =>  time(),
             'exp'       =>  time() + 3600,
             'data'  => array(
-                'UserName'  =>  "admin"
+                'ID'    =>  $row['ID'],
+                    'Mail'  =>  $row['Mail'],
+                    'UserName'  =>  $row['UserName'],
+                    'UserPassword'  =>  $row['UserPassword']
             )
         ),
         $jwtkey,
@@ -22,6 +32,10 @@ if($email == "admin" && $password == "123"){
     );
     setcookie("token", $token, time() + 3600, "/", "", true, true);
     header("location:adminPaneli.php");
+    exit();
+}
+else{
+    header("Location: login.php?error=Admin şifresi yanlış!");
     exit();
 }
 
