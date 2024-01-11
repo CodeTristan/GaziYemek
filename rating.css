@@ -1,65 +1,64 @@
 .gunun-yemegi {
-    border-top: 1px solid rgba(16, 57, 113, 255);
-  }
-  
-  .rating-wrapper {
-    margin-top: 1px solid rgba(16, 57, 113, 255);
-  }
-  
-  
-  /* Updated styling for images */
-  
-  
-  .rating-stars {
-    margin-bottom: 2vh;
-  }
-  
-  .rating {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    transform: rotateY(180deg);
-  }
-  
-  .rating input {
-    display: none;
-  }
-  
-  .rating label {
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    margin: 0 4px;
-  }
-  
-  .rating label:before {
-    content: "\2605";
-    font-size: 3vh;
-    color: lightgray; /* Gri renk */
-  }
-  
-  .rating input:checked ~ label:before {
-    color: #ffcc00; /* Altın rengi */
-  }
-  
-  .border-rating {
-    width: 100%;
-    border-top: 1px solid rgba(16, 57, 113, 255);
-  }
-  
-  .rating-submit {
-    width: 100%;
-    background-color: rgba(16, 57, 113, 255);
-    color: white;
-  }
-  
-  .float-container {
-    border: 3px solid #fff;
-    font-size:20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 250px;
-    width: 100%;
-  }
+  border-top: 1px solid rgba(16, 57, 113, 255);
+}
+
+.rating-wrapper {
+  margin-top: 1px solid rgba(16, 57, 113, 255);
+}
+
+/* Updated styling for images */
+
+.rating-stars {
+  margin-bottom: 2vh;
+}
+
+.rating {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin: 0 4px;
+}
+
+.rating label:before {
+  content: "\2605";
+  font-size: 3vh;
+  color: lightgray; /* Gri renk */
+}
+
+.rating input:checked ~ label:before {
+  color: #ffcc00; /* Altın rengi */
+}
+
+.border-rating {
+  width: 100%;
+  border-top: 1px solid rgba(16, 57, 113, 255);
+}
+
+.rating-submit {
+  width: 20%;
+  background-color: rgba(16, 57, 113, 255);
+  color: white;
+  margin-left: 40%;
+}
+
+.float-container {
+  border: 3px solid #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 100%;
+}

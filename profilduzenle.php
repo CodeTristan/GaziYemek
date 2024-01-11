@@ -33,5 +33,6 @@
         </form>
     </div>
     <?php include "footer.php" ?>
+   <script src="index.js"></script>
 </body>
 </html>

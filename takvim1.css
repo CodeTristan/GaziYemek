@@ -3,7 +3,10 @@ table {
   border-collapse: collapse;
   margin: 20px auto;
 }
-
+.textg {
+  text-align: center;
+  font-size: 35px;
+}
 th,
 td {
   padding: 5px;
@@ -13,13 +16,12 @@ td {
   display: flex;
   flex-wrap: wrap;
   border: 1px solid black !important;
-  width: 70%;
-  margin-left: 15.8%;
+  width: 70.2%;
+  margin-left: 16%;
 }
 
 .box-takvim {
-  width: 180px;
-  margin: 30px;
-  padding: 10px;
-  border: 1px solid black !important;
+  width: 260px;
+
+  border: 0.5px solid black !important;
 }

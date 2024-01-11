@@ -121,9 +121,7 @@
   <?php
   //require "mainDBConnection.php";
   ?>
-  <div class="textg">
-    <p>Takvim</p>
-  </div>
+ 
   <?php include 'takvim.php' ?>
   <?php include "footer.php" ?>
 

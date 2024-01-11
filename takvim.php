@@ -9,6 +9,9 @@
 </head>
 
 <body>
+<div class="textg">
+    <p>Takvim</p>
+  </div>
   <div class="takvim" id="takvim">
     <?php
     require "dbConfig.php";
