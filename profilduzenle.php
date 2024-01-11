@@ -11,7 +11,12 @@
 
 <div class="profile-container">
         <h1>Şifre Değiştirme</h1>
-        <form action="#" method="post">
+        <form action="changePasswordForm.php" method="post">
+
+        <?php
+            require "dbConfig.php";
+            //kullanıcı adı çekme
+        ?>
             <label for="fullName">İsim Soyisim:</label>
             <p id="fullName">Anonym</p>
 
