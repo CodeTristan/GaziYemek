@@ -1,4 +1,17 @@
+<?php
+require 'vendor/autoload.php';
 
+
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+
+$jwtkey = '70f98e89f063c9ed5f4dd3f1aeb699792b301ebbafa217fab19049b21e174d597f75f48fefa9c299eb95fc97515e4af86034f0a28a42e72643150737e8607c3a';
+
+if(isset($_COOKIE['token'])){
+    $decoded = JWT::decode($_COOKIE['token'], new Key($jwtkey, 'HS256'));
+}
+
+?>
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -27,7 +40,7 @@
         <ul>
           
           <li style="display: flex;">
-          <img src="images/logo.png" style="width: 50px;margin-left:30px""> <a href="index.php">Gazi Yemekhane</a>
+          <img src="images/logo.png" style="width: 50px;margin-left:30px"> <a href="index.php">Gazi Yemekhane</a>
           </li>
           <li id="admin" class="hideOnMobile">
             <a href="adminPaneli.php">Admin paneli</a>
@@ -51,7 +64,11 @@
       <div class="sub-menu">
         <div class="user-info">
           <img src="images/profile.png" class="user-pic" />
-          <h2>İsim</h2>
+          <?php if(isset($_COOKIE['token'])){ ?>
+              <h2><?php echo $decoded->data->UserName;?></h2>
+          <?php }else{?>
+            <h2>Anonim</h2>
+          <?php } ?>
         </div>
         <hr />
         <a href="profilduzenle.php" class="sub-menu-link">
@@ -59,7 +76,7 @@
           <p>profili düzenle</p>
           <span>></span>
         </a>
-        <a href="#" class="sub-menu-link">
+        <a href="logout.php" class="sub-menu-link">
           <img src="images/logout.png" width="100px" height="50px" />
           <p>Çıkış yap</p>
           <span>></span>

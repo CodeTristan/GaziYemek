@@ -8,6 +8,19 @@ $email = $_POST["email"];
 $password = $_POST["password"];
 
 if($email == "admin" && $password == "123"){
+    $token = JWT::encode(
+        array(
+            'iat'       =>  time(),
+            'nbf'       =>  time(),
+            'exp'       =>  time() + 3600,
+            'data'  => array(
+                'UserName'  =>  "admin"
+            )
+        ),
+        $jwtkey,
+        'HS256'
+    );
+    setcookie("token", $token, time() + 3600, "/", "", true, true);
     header("location:adminPaneli.php");
     exit();
 }
@@ -28,6 +41,7 @@ if(mysqli_num_rows($result)>0){
                 'data'  => array(
                     'ID'    =>  $row['ID'],
                     'Mail'  =>  $row['Mail'],
+                    'UserName'  =>  $row['UserName'],
                     'UserPassword'  =>  $row['UserPassword']
                 )
             ),
@@ -35,18 +49,17 @@ if(mysqli_num_rows($result)>0){
             'HS256'
         );
         setcookie("token", $token, time() + 3600, "/", "", true, true);
-        //DÜZELTMEYİ UNUTMA!!!!!!!!!!
-        header("Location: demo.php");
+        header("Location: index.php");
         exit();
     }
     else{
-        header("Location: login.php?error=Wrong password!");
+        header("Location: login.php?error=Şifre yanlış!");
         exit();
     }
     
 }
 else{
-    header("Location: login.php?error=That e-mail is not registered!");
+    header("Location: login.php?error=Bu e-postaya sahip bir hesap yok!");
     exit();
 }
 ?>
