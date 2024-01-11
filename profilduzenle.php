@@ -32,6 +32,6 @@
             <button type="submit">Şifreyi Değiştir</button>
         </form>
     </div>
-
+    <?php include "footer.php" ?>
 </body>
 </html>
