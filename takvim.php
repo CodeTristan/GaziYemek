@@ -26,6 +26,7 @@
 
     for ($i = 1; $i <= 31; $i++) {
       $day = $month . "-" . $i;
+      $dayofweek = date('w', strtotime($day));
       $query = $db->query("SELECT food.Name, food.Calorie, menu.Date 
                           from food_has_menu 
                           inner join food on food_has_menu.Food_ID = food.ID
@@ -35,6 +36,10 @@
       if ($query->num_rows > 0) {
         $row[$counter] = $query->fetch_assoc();
         $counter++;
+      }
+      else if($query->num_rows <= 0 && $dayofweek <= 5)
+      {
+        $row[$counter]["Date"] = $day;
       }
 
     }
