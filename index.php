@@ -12,6 +12,8 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <script src="index.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
 </head>
 
 <body>
@@ -138,6 +140,22 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
   <script src="rating.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  // Hammer.js'yi başlatın
+  var myCarousel = document.getElementById("myCarousel");
+  var hammer = new Hammer(myCarousel);
+
+  // Karusel için sürükleme özelliğini etkinleştirin
+  hammer.on("panleft panright", function (e) {
+    if (e.type === "panleft") {
+      $("#myCarousel").carousel("next");
+    } else if (e.type === "panright") {
+      $("#myCarousel").carousel("prev");
+    }
+  });
+});
+  </script>
 
 </body>
 
