@@ -49,7 +49,7 @@ function nextDuyuru() {
   showDuyuru(currentIndex);
 }
 
-setInterval(nextDuyuru, 20000);
+setInterval(nextDuyuru, 10000);
 
 showDuyuru(currentIndex);
 

@@ -22,155 +22,153 @@
     <p>ADMİN</p>
   </div>
   <div class="takvimharic">
-  <div class="Form">
-    <form action="adminPaneliAddingFood.php" method="post">
-      <div class="form-group">
-        <label for="mealName">Yemek İsmi</label><br />
-        <input class="labelbox" type="text" name="mealName " id="mealName" placeholder="Yemek İsmi" required/>
-      </div>
-      <div class="form-group">
-        <label for="mealType">Yemek türü giriniz</label><br />
-        <select id="mealType" name="mealType" required>
-          <option value="" disabled selected>- Seçiniz -</option>
-          <option value="Ana Yemek">- Ana Yemek -</option>
-          <option value="Çorba">- Çorbalar -</option>
-          <option value="Pilav-Ara Sıcak">- Ara Sıcak / Pilav -</option>
-          <option value="Tatlı-Meyve-Salata">- Tatlı / Meyve / Salata -</option>
+    <div class="Form">
+      <form action="adminPaneliAddingFood.php" method="post">
+        <div class="form-group">
+          <label for="mealName">Yemek İsmi</label><br />
+          <input class="labelbox" type="text" name="mealName " id="mealName" placeholder="Yemek İsmi" required />
+        </div>
+        <div class="form-group">
+          <label for="mealType">Yemek türü giriniz</label><br />
+          <select id="mealType" name="mealType" required>
+            <option value="" disabled selected>- Seçiniz -</option>
+            <option value="Ana Yemek">- Ana Yemek -</option>
+            <option value="Çorba">- Çorbalar -</option>
+            <option value="Pilav-Ara Sıcak">- Ara Sıcak / Pilav -</option>
+            <option value="Tatlı-Meyve-Salata">- Tatlı / Meyve / Salata -</option>
 
 
-        </select>
-      </div>
+          </select>
+        </div>
 
-      <div class="form-group">
-        <label for="calories">Yemek kalorisi giriniz</label><br />
-        <input class="labelbox" type="number" name="calories" id="calories" placeholder="Yemek kalorisi giriniz" required/>
-      </div>
+        <div class="form-group">
+          <label for="calories">Yemek kalorisi giriniz</label><br />
+          <input class="labelbox" type="number" name="calories" id="calories" placeholder="Yemek kalorisi giriniz" required />
+        </div>
 
-      <div class="form-group">
-        <label for="vegetarian">Vejetaryen mi?</label><br />
-        <input type="checkbox" value="true" name="isVegetarian" id="vegetarian" />
-      </div>
+        <div class="form-group">
+          <label for="vegetarian">Vejetaryen mi?</label><br />
+          <input type="checkbox" value="true" name="isVegetarian" id="vegetarian" />
+        </div>
 
-      <div class="form-group">
-        <label for="mealImage">Yemek Resmi:</label><br />
-        <input type="file" name="mealImage" accept="image/*" required onchange="previewMealImage(this)"/>
-      </div>
+        <div class="form-group">
+          <label for="mealImage">Yemek Resmi:</label><br />
+          <input type="file" name="mealImage" accept="image/*" required onchange="previewMealImage(this)" />
+        </div>
 
-      <img id="previewImage" alt="Yemek Resmi Görüntüsü" />
+        <img id="previewImage" alt="Yemek Resmi Görüntüsü" />
 
-      <button onclick="addMeal()">Ekle</button>
-      <button onclick="clearMeals()">Temizle</button>
+        <button onclick="addMeal()">Ekle</button>
+        <button onclick="clearMeals()">Temizle</button>
 
-
-
-       </form>
-  </div>
-  <div class="meal-list" id="mealList">
-    <form action="adminPaneliAddingMenu.php" method="post">
-      <label for="anaYemek">Ana Yemek Seçiniz:</label>
-      <div class="anaYemekveVejetaryen">
-        <select id="anaYemek" name="anaYemek" >
-          <option value="" disabled selected>- Seçiniz -</option>
-          <?php
-          require "dbconfig.php";
-          $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Ana Yemek' and isVegetarian = 0");
-          $i = 0;
-          while ($row = $query->fetch_assoc()) {
+      </form>
+    </div>
+    <div class="meal-list" id="mealList">
+      <form action="adminPaneliAddingMenu.php" method="post">
+        <label for="anaYemek">Ana Yemek Seçiniz:</label>
+        <div class="anaYemekveVejetaryen">
+          <select id="anaYemek" name="anaYemek">
+            <option value="" disabled selected>- Seçiniz -</option>
+            <?php
+            require "dbconfig.php";
+            $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Ana Yemek' and isVegetarian = 0");
+            $i = 0;
+            while ($row = $query->fetch_assoc()) {
             ?>
-            <option value="<?php echo $row["Name"]?>"><?php echo $row["Name"] ?></option>
+              <option value="<?php echo $row["Name"] ?>"><?php echo $row["Name"] ?></option>
 
             <?php
-            $i++;
-          }
-          ?>
-        </select>
-        <label for="vejetaryen">*Vejetaryen Yemek Seçiniz:</label>
-        <select id="VejetaryenSelect" name="VejetaryenSelect" >
+              $i++;
+            }
+            ?>
+          </select>
+          <label for="vejetaryen">*Vejetaryen Yemek Seçiniz:</label>
+          <select id="VejetaryenSelect" name="VejetaryenSelect">
+            <option value="" disabled selected>- Seçiniz -</option>
+            <?php
+            require "dbconfig.php";
+            $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Ana Yemek' and isVegetarian = 1");
+            $i = 0;
+            while ($row = $query->fetch_assoc()) {
+            ?>
+              <option value="<?php echo $row["Name"] ?>"><?php echo $row["Name"] ?></option>
+
+            <?php
+              $i++;
+            }
+            ?>
+          </select>
+        </div>
+
+        <label for="corba">Çorba Seçiniz:</label>
+        <select id="corba" name="corba" required>
           <option value="" disabled selected>- Seçiniz -</option>
           <?php
           require "dbconfig.php";
-          $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Ana Yemek' and isVegetarian = 1");
+          $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Çorba'");
           $i = 0;
           while ($row = $query->fetch_assoc()) {
-            ?>
+          ?>
             <option value="<?php echo $row["Name"] ?>"><?php echo $row["Name"] ?></option>
 
-            <?php
+          <?php
             $i++;
           }
           ?>
+
         </select>
-      </div>
 
-      <label for="corba">Çorba Seçiniz:</label>
-      <select id="corba" name="corba" required>
-        <option value="" disabled selected>- Seçiniz -</option>
-        <?php
-        require "dbconfig.php";
-        $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Çorba'");
-        $i = 0;
-        while ($row = $query->fetch_assoc()) {
+        <label for="pilavAraSicak">Pilav veya Ara Sıcak Seçiniz:</label>
+        <select id="pilavAraSicak" name="pilavAraSicak" required>
+          <option value="" disabled selected>- Seçiniz -</option>
+          <?php
+          require "dbconfig.php";
+          $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Pilav-Ara Sıcak'");
+          $i = 0;
+          while ($row = $query->fetch_assoc()) {
           ?>
-          <option value="<?php echo $row["Name"]?>"><?php echo $row["Name"] ?></option>
+            <option value="<?php echo $row["Name"] ?>"><?php echo $row["Name"] ?></option>
 
           <?php
-          $i++;
-        }
-        ?>
-
-      </select>
-
-      <label for="pilavAraSicak">Pilav veya Ara Sıcak Seçiniz:</label>
-      <select id="pilavAraSicak" name="pilavAraSicak" required>
-        <option value="" disabled selected>- Seçiniz -</option>
-        <?php
-        require "dbconfig.php";
-        $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Pilav-Ara Sıcak'");
-        $i = 0;
-        while ($row = $query->fetch_assoc()) {
+            $i++;
+          }
           ?>
-          <option value="<?php echo $row["Name"] ?>"><?php echo $row["Name"] ?></option>
+
+
+        </select>
+
+        <label for="tatliMeyveSalata">Tatlı, Meyve veya Salata Seçiniz:</label>
+        <select id="tatliMeyveSalata" name="tatliMeyveSalata" required>
+          <option value="" disabled selected>- Seçiniz -</option>
+          <?php
+          require "dbconfig.php";
+          $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Tatlı-Meyve-Salata'");
+          $i = 0;
+          while ($row = $query->fetch_assoc()) {
+          ?>
+            <option value="<?php echo $row["Name"] ?>"><?php echo $row["Name"] ?></option>
 
           <?php
-          $i++;
-        }
-        ?>
-
-
-      </select>
-
-      <label for="tatliMeyveSalata">Tatlı, Meyve veya Salata Seçiniz:</label>
-      <select id="tatliMeyveSalata" name="tatliMeyveSalata" required>
-        <option value="" disabled selected>- Seçiniz -</option>
-        <?php
-        require "dbconfig.php";
-        $query = $db->query("SELECT * FROM food WHERE Food_Type = 'Tatlı-Meyve-Salata'");
-        $i = 0;
-        while ($row = $query->fetch_assoc()) {
+            $i++;
+          }
           ?>
-          <option value="<?php echo $row["Name"] ?>"><?php echo $row["Name"] ?></option>
 
-          <?php
-          $i++;
-        }
-        ?>
+        </select>
+        <div class="form-group">
+          <label for="selectedDate">Tarih Seçiniz:</label><br />
+          <input class="labelbox" type="text" name="selectedDate " id="selectedDate" placeholder="Tarih Seçiniz" required />
+          <button> Submit</button>
 
-      </select>
-      <div class="form-group">
-        <label for="selectedDate">Tarih Seçiniz:</label><br />
-        <input class="labelbox" type="text" name="selectedDate " id="selectedDate" placeholder="Tarih Seçiniz" required/>
-        <button> Submit</button>
-
-      </div>
+        </div>
 
 
-    </form>
-  </div>
+      </form>
+    </div>
   </div>
   <?php include 'takvim.php' ?>
 
   </div>
-  
+
 
   <script src="index.js"></script>
 </body>
