@@ -56,23 +56,23 @@
                         <?php  } ?>
                         <?php
                             if(isset($_GET['errorsu'])){ ?>
-                                <div class="error-msg"><?php echo $_GET['errorsu    '];?></div>
+                                <div class="error-msg"><?php echo $_GET['errorsu'];?></div>
                         <?php  } ?>
                         <div class="input-field">
-                            <input type="text" class="input" id="email" name="email" required="">
+                            <input type="text" class="input" id="emailu" name="email" required="">
                             <label for="email">Email</label>
                         </div>
                         <div class="input-field">
-                            <input type="text" class="input" id="name" name="name" required="" autocomplete="off">
+                            <input type="text" class="input" id="nameu" name="name" required="" autocomplete="off">
                             <label for="pass">Name Surname</label>
                         </div>
 
                         <div class="input-field">
-                            <input type="password" class="input" id="pass" name="password" required="" autocomplete="off">
+                            <input type="password" class="input" id="passu" name="password" required="" autocomplete="off">
                             <label for="pass">Password</label>
                         </div>
                         <div class="input-field">
-                            <input type="password" class="input" id="pass" name="confirmPassword" required="" autocomplete="off">
+                            <input type="password" class="input" id="passcu" name="cpassword" required="" autocomplete="off">
                             <label for="pass">Confirm Password</label>
                         </div>
                         <div class="input-field">
@@ -101,7 +101,7 @@
         
         const urlParams = new URLSearchParams(queryString);
 
-        if(urlParams.has('errorsu') || urlParams.has('success')){
+        if(urlParams.has('errorsu')){
             bar.classList.add('active');
             signin.classList.add('active');
             signup.classList.add('active');
@@ -111,12 +111,19 @@
             bar.classList.add('active');
             signin.classList.add('active');
             signup.classList.add('active');
+            /*document.getElementById("email").value = '';
+            document.getElementById("pass").value = '';*/
+
 
         }
         signinbtn.onclick = function() {
             bar.classList.remove('active');
             signin.classList.remove('active');
             signup.classList.remove('active');
+            /*document.getElementById("emailu").value = '';
+            document.getElementById("passu").value = '';
+            document.getElementById("nameu").value = '';
+            document.getElementById("passcu").value = '';*/
 
         }
     </script>

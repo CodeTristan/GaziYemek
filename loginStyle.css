@@ -72,24 +72,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin: 10px 0;
     display: block;
     background: crimson;
     color: #fff;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 10px;
 }
 
 .success-msg {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin: 10px 0;
     display: block;
     background: green;
     color: #fff;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 10px;
 }
 
 i {
@@ -206,6 +208,7 @@ button {
 }
 
 @media only screen and (max-width: 900px) {
+
 
     .row {
         width: 400px;
