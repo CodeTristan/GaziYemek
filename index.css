@@ -16,13 +16,6 @@ body {
   font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-nav {
-  height: 52.5px;
-}
-.sub-menu-wrap {
-  top: 51px;
-}
-
 /* ----------Carousel---------------- */
 
 .carousel-inner a {
