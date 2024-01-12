@@ -19,6 +19,8 @@ if (isset($_COOKIE['token'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="header1.css">
+ 
+  
 
 </head>
 
@@ -58,7 +60,7 @@ if (isset($_COOKIE['token'])) {
       <ul>
 
         <li style="display: flex;">
-          <img src="images/logo.png" style="width: 50px;margin-left:30px"> <a href="index.php">Gazi Yemekhane</a>
+          <img src="images/logo.png" #idstyle="width: 50px;margin-left:30px"> <a href="index.php">Gazi Yemekhane</a>
         </li>
         <?php if (isset($_COOKIE['token']) && $decoded->data->UserName == "admin") { ?>
           <li id="admin" class="hideOnMobile">
@@ -91,9 +93,10 @@ if (isset($_COOKIE['token'])) {
             </svg></a>
         </li>
       </ul>
+      
     </nav>
-
     
+
    
 </body>
 

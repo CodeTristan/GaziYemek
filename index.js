@@ -64,3 +64,40 @@ function previewMealImage(input) {
     preview.src = "";
   }
 }
+document.addEventListener("DOMContentLoaded", function () {
+  var scrollUpBtn = document.getElementById("scrollUpBtn");
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      scrollUpBtn.style.display = "block";
+    } else {
+      scrollUpBtn.style.display = "none";
+    }
+  }
+
+  scrollUpBtn.addEventListener("click", function () {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  // Hammer.js'yi başlatın
+  var myCarousel = document.getElementById("myCarousel");
+  var hammer = new Hammer(myCarousel);
+
+  // Karusel için sürükleme özelliğini etkinleştirin
+  hammer.on("panleft panright", function (e) {
+    if (e.type === "panleft") {
+      $("#myCarousel").carousel("next");
+    } else if (e.type === "panright") {
+      $("#myCarousel").carousel("prev");
+    }
+  });
+});

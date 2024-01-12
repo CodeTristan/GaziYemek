@@ -184,6 +184,7 @@ if(isset($_COOKIE['token'])){
   </div>
   <?php include 'takvim.php' ?>
   <?php include "footer.php" ?>
+  
   </div>
 
   

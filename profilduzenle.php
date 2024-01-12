@@ -29,13 +29,18 @@ if (isset($_COOKIE['token'])) {
     <?php include 'header.php' ?>
     <div class="profile">
         <h1>Profil</h1>
+        <ul style="list-style-type: none;">
+            <li>
+                <label for="fullName">
+                    <p>Ad Soyad: <?php echo htmlspecialchars($decoded->data->UserName); ?></p>
+                </label></li>
+            <li><label for="mail">
+                    <p>e-mail: <?php echo htmlspecialchars($decoded->data->Mail); ?></p>
+                </label></li>
 
-        <label for="fullName">
-            <p>Ad Soyad: <?php echo htmlspecialchars($decoded->data->UserName); ?></p>
-        </label>
-        <label for="mail">
-            <p>e-mail: <?php echo htmlspecialchars($decoded->data->Mail); ?></p>
-        </label>
+        </ul>
+
+
         <button onclick="openModal()">Ad-soyad değiştir</button>
         <button onclick="openModal2()">Şifre değiştir</button>
     </div>
@@ -44,41 +49,41 @@ if (isset($_COOKIE['token'])) {
         <div id="modalContent">
             <h2>Ad Soyad Değiştir</h2>
             <form action="update_fullname.php" method="POST">
-                <input class="inp" type="text" name="newFullName"  placeholder="Yeni Ad Soyad" required>
-                <button type="submit">Kaydet</button>
-                <button type="button" onclick="closeModal()">İptal</button>
+                <input class="inp" type="text" name="newFullName" placeholder="Yeni Ad Soyad" required>
+                <button class="btnuser" type="submit">Kaydet</button>
+                <button class="btnuser" type="button" onclick="closeModal()">İptal</button>
             </form>
         </div>
     </div>
     <div id="modalContainer2">
         <div id="modalContent2">
-        <h1>Şifre Değiştir</h1>
-        <form action="changePasswordForm.php" method="post">
-            <?php
-            if (isset($_GET['success'])) { ?>
-                <div class="success-msg"><?php echo $_GET['success']; ?></div>
-            <?php  } ?>
-            <?php
-            if (isset($_GET['error'])) { ?>
-                <div class="error-msg"><?php echo $_GET['error']; ?></div>
-            <?php  } ?>
+            <h1>Şifre Değiştir</h1>
+            <form action="changePasswordForm.php" method="post">
+                <?php
+                if (isset($_GET['success'])) { ?>
+                    <div class="success-msg"><?php echo $_GET['success']; ?></div>
+                <?php  } ?>
+                <?php
+                if (isset($_GET['error'])) { ?>
+                    <div class="error-msg"><?php echo $_GET['error']; ?></div>
+                <?php  } ?>
 
 
-            <label for="oldPassword">Eski Şifre:</label>
-            <input class="inp" type="password"  name="oldPassword" required>
+                <label for="oldPassword">Eski Şifre:</label>
+                <input class="inp" type="password" name="oldPassword" required>
 
-            <label for="newPassword">Yeni Şifre:</label>
-            <input class="inp" type="password"  name="newPassword" required>
+                <label for="newPassword">Yeni Şifre:</label>
+                <input class="inp" type="password" name="newPassword" required>
 
-            <label for="confirmPassword">Yeni Şifre Onayla:</label>
-            <input  class="inp" type="password"  name="confirmPassword" required>
+                <label for="confirmPassword">Yeni Şifre Onayla:</label>
+                <input class="inp" type="password" name="confirmPassword" required>
 
-            <button type="submit">Şifreyi Değiştir</button>
-                <button type="button" onclick="closeModal2()">İptal</button>
+                <button class="btnuser" type="submit">Şifreyi Değiştir</button>
+                <button class="btnuser" type="button" onclick="closeModal2()">İptal</button>
             </form>
         </div>
     </div>
-    
+
     <?php include "footer.php" ?>
     <script src="index.js"></script>
     <script>
