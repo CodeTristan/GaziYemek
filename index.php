@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <script src="index.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-
+  
 </head>
 
 <body>
@@ -131,17 +131,7 @@
     <p>Duyurular</p>
   </div>
 
-  <div id="duyuru-slider">
-    <div class="duyuru">
-      <img src="images/duyuru1.png" alt="Duyuru 1" />
-    </div>
-    <div class="duyuru">
-      <img src="images/yemekücret.png" alt="Yemek Ücreti" />
-    </div>
-  </div>
-  <div id="dots-container">
-
-  </div>
+  <?php include 'duyuru.php' ?>
   <?php
   //require "mainDBConnection.php";
   ?>

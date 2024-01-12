@@ -36,11 +36,11 @@ nav {
 
 /*---------Slider---------*/
 
-.carousel  {
+.carousel {
   height: 600px;
 }
 
-.carousel-inner{
+.carousel-inner {
   height: 500px;
 }
 
@@ -83,52 +83,6 @@ nav {
 
 /*--------Rating-----------*/
 
-/* ---------------------- Duyuru --------------------------- */
-#duyuru-slider {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.duyuru {
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.duyuru img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-}
-
-#dots-container {
-  text-align: center;
-}
-
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 5px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.textg {
-  border-top: 1px solid rgba(16, 57, 113, 255);
-  text-align: center;
-  font-size: 35px;
-}
-
-/* ----------------------------------------------------- */
 @media screen and (max-width: 1000px) {
   .wrapper .carousel {
     grid-auto-columns: calc((100% / 2) - 9px);

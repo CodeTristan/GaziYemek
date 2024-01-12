@@ -16,6 +16,7 @@ td {
   display: flex;
   flex-wrap: wrap;
   border: 1px solid black !important;
+  transition: transform 0.5s;
 }
 
 .box-takvim {
@@ -26,6 +27,10 @@ td {
 
 .takvim-gun {
   background-color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+}
+.takvim-gun:hover {
+  background-color: whitesmoke;
 }
 @media (max-width: 1031px) {
   .box-takvim {

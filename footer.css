@@ -8,6 +8,12 @@
   width: 100%;
   display: flex;
 }
+.footer img {
+  cursor: pointer;
+}
+.footer li {
+  padding-left: 10px;
+}
 
 .footer .ustRenkKatmanı ul {
   width: 100%;

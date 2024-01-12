@@ -14,7 +14,8 @@ nav ul {
 nav li {
   height: 50px;
 }
-nav a {
+nav a,
+nav p {
   height: 100%;
   padding: 0 30px;
   text-decoration: none;
@@ -22,8 +23,10 @@ nav a {
   align-items: center;
   color: white;
 }
-nav a:hover {
+nav a:hover,
+nav p:hover {
   background-color: #f0f0f0;
+  color: blue;
 }
 nav li:first-child {
   margin-right: auto;
@@ -31,16 +34,13 @@ nav li:first-child {
 .header {
   width: 100%;
 }
+
 .sidebar {
   position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
   width: 250px;
-  z-index: 999;
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
-  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
   display: none;
   flex-direction: column;
   align-items: flex-start;
@@ -51,12 +51,11 @@ nav li:first-child {
 }
 .sidebar a {
   width: 100%;
-  color: rgba(16, 57, 113, 255);
 }
 .menu-button {
   display: none;
 }
-.sub-menu-wrap {
+.menu-alt-wrap {
   margin-top: 0px;
   position: absolute;
   right: 0;
@@ -64,69 +63,20 @@ nav li:first-child {
   max-height: 0px;
   overflow: hidden;
   transition: max-height 0.5s;
-  border: 0.5px black solid;
-  background-color: beige;
+
   font-size: 17px;
   z-index: 1;
   cursor: pointer;
 }
-.sub-menu-wrap.open-menu {
+.menu-alt-wrap.open-menu {
   max-height: 300px;
 }
-.sub-menu {
+.menu-alt {
   background: #fff;
-  padding: 10px;
-  margin: 7px;
-  color: blue !important;
+
+  border: 1px solid black;
 }
-.user-info {
-  display: flex;
-  align-items: center;
-}
-.user-info h2 {
-  font-weight: 500;
-  font-size: 17px;
-}
-.user-info img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 15px;
-}
-.sub-menu hr {
-  border: 0;
-  height: 1px;
-  width: 100%;
-  background: #ccc;
-  margin: 15px 0 10px;
-}
-.sub-menu-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  margin: 10px 0;
-  color: blue;
-}
-.sub-menu-link p {
-  width: 50%;
-}
-.sub-menu-link img {
-  border-radius: 50%;
-  padding: 8px;
-  margin-right: 1px;
-  width: 100px;
-  height: 70px;
-}
-.sub-menu-link span {
-  font-size: 22px;
-  transition: transform 0.5s;
-}
-.sub-menu-link:hover span {
-  transform: translateX(5px);
-}
-.sub-menu-link:hover p {
-  font-weight: 600;
-}
+
 .header {
   width: 100%;
 }
