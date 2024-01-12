@@ -11,7 +11,6 @@ body {
   justify-content: center;
   min-height: 100vh;
   background: whitesmoke;
-
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -19,7 +18,7 @@ body {
   overflow-y: auto;
 }
 
-.profile-container {
+.profile {
   padding: 20px;
   border-radius: 8px;
   background-color: #fff;
@@ -27,19 +26,19 @@ body {
   height: 60%;
 }
 
-.error-msg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 10px 0;
-  display: block;
-  background: lightpink;
-  color: #fff;
-  border-radius: 5px;
+.profile p {
   font-size: 20px;
+  margin-top: 10px;
 }
 
+.profile-container {
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-msg,
 .success-msg {
   display: flex;
   justify-content: center;
@@ -47,10 +46,18 @@ body {
   text-align: center;
   margin: 10px 0;
   display: block;
-  background: lightgreen;
-  color: #fff;
   border-radius: 5px;
   font-size: 20px;
+}
+
+.error-msg {
+  background: lightpink;
+  color: #fff;
+}
+
+.success-msg {
+  background: lightgreen;
+  color: #fff;
 }
 
 h1 {
@@ -60,7 +67,7 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 20%;
 }
 
 label {
@@ -86,4 +93,29 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+#modalContainer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+#modalContent {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+#newFullName {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
 }

@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="duyuru.css">
 </head>
 <body>
+<div class="textg" id="duyuruu">
+    <p>Duyurular</p>
+  </div>
 <div id="duyuru-slider">
     <div class="duyuru">
       <img src="images/duyuru1.png" alt="Duyuru 1" />

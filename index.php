@@ -127,9 +127,7 @@
   </div>
 
   <?php if($today == date("Y-m-d"))include 'ratingImages.php' ?>
-  <div class="textg">
-    <p>Duyurular</p>
-  </div>
+  
 
   <?php include 'duyuru.php' ?>
   <?php

@@ -32,12 +32,26 @@ if (isset($_COOKIE['token'])) {
               <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
             </svg></a>
         </li>
+        <li><?php if (isset($_COOKIE['token'])) { ?>
+            <a href="profilduzenle.php"><?php echo $decoded->data->UserName; ?></a>
+          <?php }   ?></li>
         <?php if (isset($_COOKIE['token']) && $decoded->data->UserName == "admin") { ?>
           <li id="admingiris"><a href="adminPaneli.php">Admin paneli</a></li>
         <?php } ?>
-        <li id="admingiris"><a href="#duyuru-slider">Duyurular</a></li>
+        <li id="admingiris"><a href="#duyuruu">Duyurular</a></li>
+        
         <li><a href="#takvim1">Yemek Takvimi</a></li>
-
+        <li>  <?php if (isset($_COOKIE['token'])) { ?>
+          <a href="logout.php" >
+            Çıkış yap
+            
+          </a>
+        <?php } else { ?>
+          <a href="login.php" >
+            Giriş yap
+            
+          </a>
+        <?php } ?></li>
 
       </ul>
 
@@ -51,12 +65,25 @@ if (isset($_COOKIE['token'])) {
             <a href="adminPaneli.php">Admin paneli</a>
           </li>
         <?php } ?>
-        <li id="admin" class="hideOnMobile"><a href="#duyuru-slider">Duyurular</a></li>
+        
+        <li id="admin" class="hideOnMobile"><a href="#duyuruu">Duyurular</a></li>
         <li class="hideOnMobile"><a href="#takvim1">Yemek Takvimi</a></li>
 
         <li class="hideOnMobile">
-          <p onclick="toggleMenu()">İsim</p>
+        <?php if (isset($_COOKIE['token'])) { ?>
+            <a href="profilduzenle.php"><?php echo $decoded->data->UserName; ?></a>
+          <?php }   ?>
+         
         </li>
+        <li>  <?php if (isset($_COOKIE['token'])) { ?>
+          <a href="logout.php" >
+            Çıkış yap
+            
+          </a>
+        <?php } else { ?>
+          <a href="login.php">Giriş yap
+          </a>
+        <?php } ?></li>
 
         <li class="menu-button" onclick="showSidebar()">
           <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
@@ -67,38 +94,7 @@ if (isset($_COOKIE['token'])) {
     </nav>
 
     
-    <div class="menu-alt-wrap" id="subMenu">
-      <div class="menu-alt">
-        <div class="user-info">
-          
-          <?php if (isset($_COOKIE['token'])) { ?>
-            <h2><?php echo $decoded->data->UserName; ?></h2>
-          <?php } else { ?>
-            <h2>Anonim</h2>
-          <?php } ?>
-        </div>
-        <hr />
-        <?php if (isset($_COOKIE['token'])) { ?>
-          <a href="profilduzenle.php" class="menu-alt-link">
-            <p>profili düzenle</p>
-            <span>></span>
-          </a>
-        <?php } ?>
-
-        <?php if (isset($_COOKIE['token'])) { ?>
-          <a href="logout.php" class="menu-alt-link">
-            <p>Çıkış yap</p>
-            <span>></span>
-          </a>
-        <?php } else { ?>
-          <a href="login.php" class="menu-alt-link">
-            <p>Giriş yap</p>
-            <span>></span>
-          </a>
-        <?php } ?>
-
-      </div>
-    </div>
+   
 </body>
 
 </html>

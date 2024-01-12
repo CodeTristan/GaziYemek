@@ -45,36 +45,15 @@ nav li:first-child {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+
+  background-color: rgba(16, 57, 113, 0.8);
+  z-index: 999;
 }
 .sidebar li {
   width: 100%;
 }
 .sidebar a {
   width: 100%;
-}
-.menu-button {
-  display: none;
-}
-.menu-alt-wrap {
-  margin-top: 0px;
-  position: absolute;
-  right: 0;
-  width: 250px;
-  max-height: 0px;
-  overflow: hidden;
-  transition: max-height 0.5s;
-
-  font-size: 17px;
-  z-index: 1;
-  cursor: pointer;
-}
-.menu-alt-wrap.open-menu {
-  max-height: 300px;
-}
-.menu-alt {
-  background: #fff;
-
-  border: 1px solid black;
 }
 
 .header {
@@ -90,7 +69,7 @@ nav li:first-child {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .sidebar {
     display: flex;
   }
