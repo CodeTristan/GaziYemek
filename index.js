@@ -6,10 +6,6 @@ function hideSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.style.display = "none";
 }
-let subMenu = document.getElementById("subMenu");
-function toggleMenu() {
-  subMenu.classList.toggle("open-menu");
-}
 
 $(function () {
   $("#selectedDate").datepicker({

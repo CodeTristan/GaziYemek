@@ -25,7 +25,7 @@ nav p {
 }
 nav a:hover,
 nav p:hover {
-  background-color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.1);
   color: blue;
 }
 nav li:first-child {
@@ -54,6 +54,9 @@ nav li:first-child {
 }
 .sidebar a {
   width: 100%;
+}
+.menu-button {
+  display: none;
 }
 
 .header {

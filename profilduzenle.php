@@ -37,21 +37,22 @@ if (isset($_COOKIE['token'])) {
             <p>e-mail: <?php echo htmlspecialchars($decoded->data->Mail); ?></p>
         </label>
         <button onclick="openModal()">Ad-soyad değiştir</button>
-        <div id="modalContainer">
+        <button onclick="openModal2()">Şifre değiştir</button>
+    </div>
+
+    <div id="modalContainer">
         <div id="modalContent">
             <h2>Ad Soyad Değiştir</h2>
             <form action="update_fullname.php" method="POST">
-                <input type="text" name="newFullName" id="newFullName" placeholder="Yeni Ad Soyad" required>
+                <input class="inp" type="text" name="newFullName"  placeholder="Yeni Ad Soyad" required>
                 <button type="submit">Kaydet</button>
                 <button type="button" onclick="closeModal()">İptal</button>
             </form>
         </div>
     </div>
-    </div>
-
-    
-    <div class="profile-container">
-        <h1>Şifre Değiştirme</h1>
+    <div id="modalContainer2">
+        <div id="modalContent2">
+        <h1>Şifre Değiştir</h1>
         <form action="changePasswordForm.php" method="post">
             <?php
             if (isset($_GET['success'])) { ?>
@@ -64,17 +65,20 @@ if (isset($_COOKIE['token'])) {
 
 
             <label for="oldPassword">Eski Şifre:</label>
-            <input type="password" id="oldPassword" name="oldPassword" required>
+            <input class="inp" type="password"  name="oldPassword" required>
 
             <label for="newPassword">Yeni Şifre:</label>
-            <input type="password" id="newPassword" name="newPassword" required>
+            <input class="inp" type="password"  name="newPassword" required>
 
             <label for="confirmPassword">Yeni Şifre Onayla:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <input  class="inp" type="password"  name="confirmPassword" required>
 
             <button type="submit">Şifreyi Değiştir</button>
-        </form>
+                <button type="button" onclick="closeModal2()">İptal</button>
+            </form>
+        </div>
     </div>
+    
     <?php include "footer.php" ?>
     <script src="index.js"></script>
     <script>
@@ -84,6 +88,15 @@ if (isset($_COOKIE['token'])) {
 
         function closeModal() {
             document.getElementById('modalContainer').style.display = 'none';
+        }
+    </script>
+    <script>
+        function openModal2() {
+            document.getElementById('modalContainer2').style.display = 'flex';
+        }
+
+        function closeModal2() {
+            document.getElementById('modalContainer2').style.display = 'none';
         }
     </script>
 </body>
