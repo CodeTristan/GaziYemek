@@ -76,6 +76,7 @@
                         inner join menu on food_has_menu.Menu_ID = menu.ID
                         Where menu.date = '$today'");
 
+      
       if ($query->num_rows > 0) {
         $id = 0;
         $activeSlide = "active";
@@ -84,12 +85,26 @@
           $imageURL = 'images/' . $row["Food_Type"] . '/' . $row["File_name"];
           $name = $row["Name"];
           $calori = $row["Calorie"];
+
+          $vote = $db->query("SELECT vote.Overall_Vote FROM vote
+                          inner join score on vote.ID = score.Vote_ID
+                          inner join food_has_menu on score.food_ID = food_has_menu.ID
+                          inner join food on food.ID = food_has_menu.Food_ID
+                          where food.Name = '$name';
+                          ")->fetch_all();
+          
+          $score = 0;
+          for ($i=0; $i < count($vote); $i++) 
+          { 
+              $score += $vote[$i][0];
+          }
+          $score = $score / count($vote);
       ?>
           
           <div class="carousel-item <?php echo $activeSlide ?>" >
             <div class="overlay-image" style="background-image:url('<?php echo $imageURL ?>');">
               <div class="content">
-                <h6><br><?php echo $name ?><br>Kalori:<?php echo $calori ?></h6>
+                <h6><br><?php echo $name ?><br>Kalori:<?php echo $calori ."   Skor: ";?><?php echo $score . "/5"?></h6>
               </div>
             </div>
 
