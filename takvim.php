@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="takvim.css">
+  <link rel="stylesheet" href="takvimTablo.css">
 </head>
 
 <body>
@@ -15,7 +15,6 @@
   <div class="takvim" id="takvim">
     <?php
     require "dbConfig.php";
-    date_default_timezone_set('Europe/Istanbul');
     $today = date("Y-m-d");
     $month = date('Y-m', strtotime($today));
     $counter = 0;
@@ -84,13 +83,20 @@
         }
 
         ?>
-    <div class="box-takvim">
+    <div <?php if($date == $today) { ?>style="background-color: rgba(187,227,250,255); " <?php }?>class="box-takvim">
       
         <table>
+        
           <thead>
             <tr>
-              <th>
-                <?php echo $formattedDate ." ". $days[$dayofweek - 1]?>
+              <th >
+                <form method="post" action="index.php">
+          
+        <button class="takvim-gun"style="height:50px; width: 100%; border:0.25px solid black;"type="submit" name="Date" value="<?php echo $date ?>">
+        <?php echo $formattedDate ." ". $days[$dayofweek - 1]?>
+        </button>
+      </form>
+                
               </th>
             </tr>
           </thead>

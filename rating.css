@@ -37,13 +37,12 @@
   color: #ffcc00; /* Altın rengi */
 }
 
-
 .rating-submit {
   width: 20%;
   background-color: rgba(16, 57, 113, 255);
   color: white;
   margin-left: 40%;
-  margin-bottom:1.5%;
+  margin-bottom: 1.5%;
 }
 
 .float-container {

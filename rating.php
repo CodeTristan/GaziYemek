@@ -80,4 +80,5 @@ foreach ($ratings as $rating)
 }
 
 //close the voting screen
+header("Location:index.php");
 ?>

@@ -23,7 +23,11 @@ td {
 
   border: 0.5px solid black !important;
 }
-@media (max-width: 600px) {
+
+.takvim-gun {
+  background-color: white;
+}
+@media (max-width: 1031px) {
   .box-takvim {
     width: 100%;
   }

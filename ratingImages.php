@@ -11,7 +11,7 @@
 <body>
   <div id="Yemekpuan" class="rating-wrapper">
     <form action="rating.php" method="post">
-      <div class="textg">
+      <div id="yemekpuanla"class="textg">
         <p class="gunun-yemegi">Günün yemeğini puanla!</p>
       </div>
       <div class="float-container">
@@ -32,6 +32,10 @@
               $imageURL = 'images/' . $row["Food_Type"] . '/' . $row["File_name"];
               $name = $row["Name"];
               $calori = $row["Calorie"];
+              $date = $row["Date"];
+              
+              if($today == $date)
+              {
               ?>
               <div class="resim-yazi">
                 <h2>
@@ -41,6 +45,7 @@
               <?php
               $id++;
             }
+          }
             ?>
             <?php
 
@@ -48,6 +53,7 @@
           ?>
 
         </div>
+        
         <div style="width:40%">
           <?php
           require 'dbConfig.php';
@@ -65,8 +71,13 @@
               $imageURL = 'images/' . $row["Food_Type"] . '/' . $row["File_name"];
               $name = $row["Name"];
               $calori = $row["Calorie"];
+              $date = $row["Date"];
+              if($today == $date)
+              {
               ?>
+              
               <div class="rating-container">
+              
                 <div class="rating-stars">
                   <div class="rating" id="rating<?php echo $id ?>">
                     <input type="radio" name="rating<?php echo $id ?>" id="star1_<?php echo $id ?>" value="5">
@@ -85,6 +96,7 @@
               <?php
               $id++;
             }
+          }
             ?>
             <?php
 
@@ -93,7 +105,16 @@
         </div>
       </div>
     </form>
-    <input class="rating-submit" type="submit" onclick="rateX()" value="Gönder">
+    <?php if(isset($_COOKIE['token'])){ ?>
+      <a href="index.php">
+      <input class="rating-submit" type="submit" onclick="rateX()" value="Gönder">
+      </a>
+    <?php }else{?>
+      <a href="login.php?error=Oy vermek için önce giriş yap!">
+      <button type="button" class="rating-submit" onclick="window.locaton.href='login.php'">Gönder</button>
+      </a>
+    <?php } ?>
+    
 
   </div>
 
@@ -133,7 +154,7 @@
 
       console.log("PHP sent");
       xhr.send(params);
-
+      
 
     }
 

@@ -34,7 +34,7 @@ if($email == "admin" && password_verify($password,$temp)){
     header("location:adminPaneli.php");
     exit();
 }
-else{
+elseif($email == "admin" && !password_verify($password,$temp)){
     header("Location: login.php?error=Admin şifresi yanlış!");
     exit();
 }

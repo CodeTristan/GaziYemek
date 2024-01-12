@@ -22,9 +22,7 @@
 
   <div class="textg" style="background:transparent;">
   <?php
-    date_default_timezone_set('Europe/Istanbul');
-    $today = date("Y-m-d");
-
+    require "today.php";
     $days = array('Pazartesi','Salı','Çarşamba','Perşembe','Cuma');
     $dayofweek = date('w', strtotime($today));
     $tarih = date('d.m.Y', strtotime($today));
@@ -37,7 +35,6 @@
       <?php
       require 'dbConfig.php';
       date_default_timezone_set('Europe/Istanbul');
-      $today = date("Y-m-d");
       $query = $db->query("SELECT food.Name, food.Calorie, Food.File_name, menu.Date,food.Food_Type
                           from food_has_menu 
                           inner join food on food_has_menu.Food_ID = food.ID
@@ -69,7 +66,6 @@
       <?php
       require 'dbConfig.php';
       
-      $today = date("Y-m-d");
       $query = $db->query("SELECT food.Name, food.Calorie, Food.File_name, menu.Date,food.Food_Type
                         from food_has_menu 
                         inner join food on food_has_menu.Food_ID = food.ID
@@ -98,7 +94,9 @@
           { 
               $score += $vote[$i][0];
           }
-          $score = $score / count($vote);
+          if(count($vote) > 0)
+            $score = $score / count($vote);
+            $score = round($score, 1);
       ?>
           
           <div class="carousel-item <?php echo $activeSlide ?>" >
@@ -128,7 +126,7 @@
   ?>
   </div>
 
-  <?php include 'ratingImages.php' ?>
+  <?php if($today == date("Y-m-d"))include 'ratingImages.php' ?>
   <div class="textg">
     <p>Duyurular</p>
   </div>
