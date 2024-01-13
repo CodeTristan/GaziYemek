@@ -39,7 +39,10 @@ if (isset($_COOKIE['token'])) {
                 </label></li>
 
         </ul>
-
+        <?php
+                if (isset($_GET['success'])) { ?>
+                    <div class="success-msg"><?php echo $_GET['success']; ?></div>
+        <?php  } ?>
 
         <button onclick="openModal()">Ad-soyad değiştir</button>
         <button onclick="openModal2()">Şifre değiştir</button>
@@ -49,6 +52,10 @@ if (isset($_COOKIE['token'])) {
         <div id="modalContent">
             <h2>Ad Soyad Değiştir</h2>
             <form action="update_fullname.php" method="POST">
+            <?php
+                if (isset($_GET['error1'])) { ?>
+                    <div class="error-msg"><?php echo $_GET['error1']; ?></div>
+                <?php  } ?>
                 <input class="inp" type="text" name="newFullName" placeholder="Yeni Ad Soyad" required>
                 <button class="btnuser" type="submit">Kaydet</button>
                 <button class="btnuser" type="button" onclick="closeModal()">İptal</button>
@@ -59,10 +66,7 @@ if (isset($_COOKIE['token'])) {
         <div id="modalContent2">
             <h1>Şifre Değiştir</h1>
             <form action="changePasswordForm.php" method="post">
-                <?php
-                if (isset($_GET['success'])) { ?>
-                    <div class="success-msg"><?php echo $_GET['success']; ?></div>
-                <?php  } ?>
+                
                 <?php
                 if (isset($_GET['error'])) { ?>
                     <div class="error-msg"><?php echo $_GET['error']; ?></div>
@@ -86,6 +90,19 @@ if (isset($_COOKIE['token'])) {
 
     <?php include "footer.php" ?>
     <script src="index.js"></script>
+    <script>
+        const queryString = window.location.search;
+        
+        const urlParams = new URLSearchParams(queryString);
+
+        if(urlParams.has('error')){
+            document.getElementById('modalContainer2').style.display = 'flex';
+        }
+        if(urlParams.has('error1')){
+            document.getElementById('modalContainer').style.display = 'flex';
+        }
+
+    </script>
     <script>
         function openModal() {
             document.getElementById('modalContainer').style.display = 'flex';

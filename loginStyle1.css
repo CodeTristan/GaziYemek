@@ -36,7 +36,7 @@ body {
   justify-content: center;
   position: absolute;
   zoom: 120%;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .row .side-image.active {
@@ -156,12 +156,12 @@ a {
   transition: 0.5s;
 }
 
-.input-field input:focus ~ label {
+.input-field input:focus~label {
   top: -10px;
   font-size: 13px;
 }
 
-.input-field input:valid ~ label {
+.input-field input:valid~label {
   top: -10px;
   font-size: 13px;
   color: #5d5076;

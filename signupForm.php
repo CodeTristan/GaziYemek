@@ -36,4 +36,4 @@ if (mysqli_query($db, $sql)) {
 
 mysqli_close($db);
 
-include "index.php";
+

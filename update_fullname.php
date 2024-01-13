@@ -16,40 +16,20 @@ if(isset($_COOKIE['token'])){
 
 ?>
 <?php
-
-    $oldPassword = $_POST["oldPassword"];
-    $newPassword = $_POST["newPassword"];
-    $confirmPassword = $_POST["confirmPassword"];
+    $newName = $_POST["newFullName"];
 
     require "dbConfig.php";
-    
-    $checkpassword = $decoded->data->UserPassword;
-    if(!password_verify($oldPassword,$checkpassword)){
-        header("location:profilduzenle.php?error=Eski şifre doğru değil!");
+
+    $checkName = $decoded->data->UserName;
+
+    if($newName == $checkName){
+        header("location:profilduzenle.php?error1=Eski isim ile yeni isim aynı!");
         exit();
     }
 
-    else if($newPassword != $confirmPassword)
-    {
-        //check if password is same as confirmed
-        //show error
-        header("location:profilduzenle.php?error=Şifre onayla şifre ile uyuşmuyor!");
-        exit();
-        
-    }
-    else if(password_verify($newPassword,$checkpassword))
-    {
-        //check if new password is same as the old one
-        //show error
-        header("location:profilduzenle.php?error=Eski şifre ile yeni şifre aynı!");
-        exit();
-    }
-    
-    //If there is no error
-    $newHashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
     $Mail = $decoded->data->Mail;
-    $db->query("UPDATE user SET UserPassword = '$newHashedPassword' Where Mail = '$Mail'");
-    
+    $db->query("UPDATE user SET UserName = '$newName' Where Mail = '$Mail'");
+
     setcookie("token", "", time() - 3600, "/", "", true, true);
     $sql = "SELECT * FROM user WHERE Mail='$Mail'";
     $result = mysqli_query($db,$sql);
@@ -70,7 +50,7 @@ if(isset($_COOKIE['token'])){
         'HS256'
     );
     setcookie("token", $token, time() + 3600, "/", "", true, true);
-    header("location:profilduzenle.php?success=Şifre değiştirildi");
+    header("location:profilduzenle.php?success=İsim değiştirildi");
     exit();
 
 ?>
