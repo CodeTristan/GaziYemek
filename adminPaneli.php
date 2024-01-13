@@ -21,7 +21,7 @@ if(isset($_COOKIE['token'])){
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="adminPanelCss1.css">
+  <link rel="stylesheet" href="adminPanelCss.css">
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -174,7 +174,7 @@ if(isset($_COOKIE['token'])){
         <div class="form-group">
           <label for="selectedDate">Tarih Seçiniz:</label><br />
           <input class="labelbox" type="text" name="selectedDate" id="selectedDate" placeholder="Tarih Seçiniz" required />
-          <button> Submit</button>
+          <button> Ekle</button>
 
         </div>
 

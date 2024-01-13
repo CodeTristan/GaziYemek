@@ -21,7 +21,7 @@ if (isset($_COOKIE['token'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="profilduzenle1.css">
+    <link rel="stylesheet" href="profilduzenle.css">
     <title>Profil Sayfası</title>
 </head>
 
@@ -111,8 +111,6 @@ if (isset($_COOKIE['token'])) {
         function closeModal() {
             document.getElementById('modalContainer').style.display = 'none';
         }
-    </script>
-    <script>
         function openModal2() {
             document.getElementById('modalContainer2').style.display = 'flex';
         }
@@ -121,6 +119,7 @@ if (isset($_COOKIE['token'])) {
             document.getElementById('modalContainer2').style.display = 'none';
         }
     </script>
+    
 </body>
 
 </html>

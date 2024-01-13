@@ -72,9 +72,6 @@ nav li:first-child {
 }
 
 @media (max-width: 700px) {
-  .sidebar {
-    display: flex;
-  }
   .menu-button {
     display: flex;
   }

@@ -15,7 +15,7 @@ $(function () {
     changeYear: true, // Yıl seçimini aktif et
   });
 });
-
+/*-----------------------------------------duyuru---------------------------------------------------------------*/
 let currentIndex = 0;
 const duyurular = document.querySelectorAll(".duyuru");
 const dotsContainer = document.getElementById("dots-container");
@@ -45,10 +45,10 @@ function nextDuyuru() {
   showDuyuru(currentIndex);
 }
 
-setInterval(nextDuyuru, 5000);
+setInterval(nextDuyuru, 5000); //Duyurular arası geçiş için süre
 
 showDuyuru(currentIndex);
-
+// -----------------------------------------------------------------------------------------------
 function previewMealImage(input) {
   var preview = document.getElementById("previewImage");
   var file = input.files[0];

@@ -33,7 +33,7 @@ if(isset($_COOKIE['token'])){
     {
         //check if password is same as confirmed
         //show error
-        header("location:profilduzenle.php?error=Şifre onayla şifre ile uyuşmuyor!");
+        header("location:profilduzenle.php?error=Yeni şifreler aynı değil!");
         exit();
         
     }

@@ -44,9 +44,7 @@
   display: flex;
   justify-content: center;
 }
-.ok:hover {
-  background-color: #0056b3;
-}
+
 .ok {
   display: none;
   position: fixed;

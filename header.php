@@ -18,7 +18,7 @@ if (isset($_COOKIE['token'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="header1.css">
+  <link rel="stylesheet" href="header.css">
  
   
 
@@ -29,17 +29,22 @@ if (isset($_COOKIE['token'])) {
   <div class="header">
     <nav>
       <ul class="sidebar">
+        
         <li onclick="hideSidebar()">
           <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
               <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
             </svg></a>
         </li>
-        <li><?php if (isset($_COOKIE['token'])) { ?>
+        <li><a id="admingiris" href="index.php">Ana Sayfa</a></li>
+        <?php if (isset($_COOKIE['token'])) { ?> <li id="admingiris">
             <a href="profilduzenle.php"><?php echo $decoded->data->UserName; ?></a>
           <?php }   ?></li>
-        <?php if (isset($_COOKIE['token']) && $decoded->data->UserName == "admin") { ?>
+        
+          <?php if (isset($_COOKIE['token']) && $decoded->data->UserName == "admin")
+           { ?>
           <li id="admingiris"><a href="adminPaneli.php">Admin paneli</a></li>
         <?php } ?>
+        
         <li id="admingiris"><a href="#duyuruu">Duyurular</a></li>
         
         <li><a href="#takvim1">Yemek Takvimi</a></li>
