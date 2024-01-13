@@ -63,7 +63,7 @@
       while ($newCounter < $counter) {
         
         $date = $row[$newCounter][0][2];
-        $formattedDate = date("d.W.Y", strtotime($date));
+        $formattedDate = date("d.m.Y", strtotime($date));
         $dayofweek = date('w', strtotime($date));
 
         
