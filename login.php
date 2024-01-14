@@ -15,7 +15,7 @@
         <div class="row">
             <div class="side-image">
 
-                <img src="images/Gazi_Üniversitesi_logo.png">
+                <img src="images/logo.png" style="width: 100%;">
 
             </div>
             <div class="box signin">
