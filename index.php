@@ -101,7 +101,8 @@
           <div class="carousel-item <?php echo $activeSlide ?>" >
             <div class="overlay-image" style="background-image:url('<?php echo $imageURL ?>');">
               <div class="content">
-                <h6><br><?php echo $name ?><br>Kalori:<?php echo $calori ."   Skor: ";?><?php echo $score . "/5"?></h6>
+              <h6><br><?php echo $name ?><br>Kalori:<?php echo $calori ?>  <span style="color: rgba(16, 57, 113, 255);">★</span><?php echo $score ?>/5</h6>
+
               </div>
             </div>
 
