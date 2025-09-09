@@ -15,4 +15,4 @@ Developed with a focus on usability, automation, and real-time feedback.
 
 - Frontend: HTML, CSS
 - Backend: PHP
-- Database: MySQL (if applicable, specify here)
+- Database: MySQL
